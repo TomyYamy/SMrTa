@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  python:
+    build: .
+    privileged: true
+    tty: true
+    volumes:
+      - ./:/home/SMrTa
+    working_dir: /home/SMrTa

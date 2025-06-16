@@ -36,7 +36,7 @@ def main():
         tasks_stream=ts,
         room_graph=graph,
         capacity=arguments.capacity,
-        num_aps=aps if arguments.num_aps else arguments.num_aps,
+        num_aps=aps if not arguments.num_aps else arguments.num_aps,
         fidelity=arguments.fidelity,
         free_action_points=(not arguments.keep_aps),
         timeout=arguments.timeout,

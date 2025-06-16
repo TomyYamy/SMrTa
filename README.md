@@ -9,3 +9,11 @@ To install the command-line interface tool, we use [uv](https://docs.astral.sh/u
 ```bash
 uv pip install .
 ```
+
+## Example
+
+To validate that the tool installed correctly and is working, run the following command:
+
+```bash
+smrta --file="benchmarks/single/config/t_20_a_10_d_5-0.json"
+```

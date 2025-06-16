@@ -4,4 +4,16 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "argparse>=1.4.0",
+    "bitwuzla",
+    "dijkstar>=2.6.0",
+    "numpy>=2.3.0",
+    "z3-solver>=4.15.1.0",
+]
+
+[project.scripts]
+smrta = "smrta.bin.smrta.main:main"
+
+[tool.uv.sources]
+bitwuzla = { git = "https://github.com/bitwuzla/bitwuzla.git" }

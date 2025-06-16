@@ -4,7 +4,7 @@ The **S**MT-based **M**ulti-**R**obot **T**ask **A**llocation ("S-MrTa") is an S
 
 ## Installation
 
-To install the command-line interface tool, we use the the [uv](https://docs.astral.sh/uv/getting-started/installation/) tool for frontend package management and installation orchestration. Therefore, first install the uv tool and then run the following command to install this tool:
+To install the command-line interface tool, we use [uv](https://docs.astral.sh/uv/getting-started/installation/). After setup, run the following command:
 
 ```bash
 uv pip install .

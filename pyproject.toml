@@ -17,3 +17,6 @@ smrta = "smrta.bin.smrta.main:main"
 
 [tool.uv.sources]
 bitwuzla = { git = "https://github.com/bitwuzla/bitwuzla.git" }
+
+[tool.setuptools.package-data]
+"smrta.data" = ["*.pkl"]

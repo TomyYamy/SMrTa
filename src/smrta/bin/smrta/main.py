@@ -2,6 +2,7 @@ import math
 import smrta.create_randomized_inputs as cri
 import smrta.run_realistic_setting as rrs
 
+from importlib.resources import files, as_file
 from smrta.MRTASolver import MRTASolver
 from .cli import cli
 
@@ -17,7 +18,11 @@ def main():
     # This will load the agent configurations from the file and pre-process data
     # to correctly call the solver.
     agents, ts = cri.load_config(arguments.file)
-    count, graph = rrs.dictionary_to_matrix(rrs.load_weighted_graph())
+
+    with as_file(files("smrta.data").joinpath("weighted_graph_p3.pkl")) as path:
+        count, graph = rrs.dictionary_to_matrix(rrs.load_weighted_graph(
+            file_name=str(path)
+        ))
 
     # Compute the number of APS.
     #

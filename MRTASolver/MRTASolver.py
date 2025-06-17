@@ -145,8 +145,9 @@ class MRTASolver:
                     # sol = self.extract_and_verify_model(solver, agents, tasks_stream[:i+1], capacity, room_graph, curr_max_time)
                     sol = self.extract_model(solver)
                     verify(sol, agents, tasks_stream[:i+1], capacity, room_graph, curr_max_time)
+                    print(sol)
                     self.debug_print("Model has been verified.")
-                    if prev_sol is not None:
+                    if prev_sol is cknot None:
                         check_sol_consistency(curr_time, prev_sol, sol, self.free_action_points)
                 else:
                     sol = None

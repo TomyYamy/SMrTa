@@ -2,12 +2,24 @@
 
 The **S**MT-based **M**ulti-**R**obot **T**ask **A**llocation ("S-MrTa") is an SMT-based approach used in allocating tasks for multi-agent systems and scenarios.
 
-## Installation
+This is checked by Ubuntu 24.04.
 
-To install the command-line interface tool, we use [uv](https://docs.astral.sh/uv/getting-started/installation/). After setup, run the following command:
+## Setup
+
+To install the command-line interface tool, we use [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ```bash
-uv pip install .
+sudo snap install astral-uv
+```
+
+## Installation
+
+After setup, run the following command:
+
+```bash
+$ uv venv
+$ source .venv/bin/activate
+(SMrTa)$ uv pip install .
 ```
 
 ## Example

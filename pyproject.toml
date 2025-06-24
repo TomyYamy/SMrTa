@@ -16,7 +16,7 @@ dependencies = [
 smrta = "smrta.bin.smrta.main:main"
 
 [tool.uv.sources]
-bitwuzla = { git = "https://github.com/bitwuzla/bitwuzla.git" }
+bitwuzla = { git = "https://github.com/bitwuzla/bitwuzla", rev = "6f335edd97022c7036cf0f8b4cb001ecd30eb1aa" }
 
 [tool.setuptools.package-data]
 "smrta.data" = ["*.pkl"]

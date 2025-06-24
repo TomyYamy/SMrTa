@@ -14,7 +14,7 @@ wheels = [
 [[package]]
 name = "bitwuzla"
 version = "0.8.0.dev0"
-source = { git = "https://github.com/bitwuzla/bitwuzla.git#47e491bc7d3fe02e5a33d3ada2f546d5cf576dd5" }
+source = { git = "https://github.com/bitwuzla/bitwuzla?rev=6f335edd97022c7036cf0f8b4cb001ecd30eb1aa#6f335edd97022c7036cf0f8b4cb001ecd30eb1aa" }
 
 [[package]]
 name = "dijkstar"
@@ -82,7 +82,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "argparse", specifier = ">=1.4.0" },
-    { name = "bitwuzla", git = "https://github.com/bitwuzla/bitwuzla.git" },
+    { name = "bitwuzla", git = "https://github.com/bitwuzla/bitwuzla?rev=6f335edd97022c7036cf0f8b4cb001ecd30eb1aa" },
     { name = "dijkstar", specifier = ">=2.6.0" },
     { name = "numpy", specifier = ">=2.3.0" },
     { name = "z3-solver", specifier = ">=4.15.1.0" },

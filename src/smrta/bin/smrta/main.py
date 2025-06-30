@@ -4,7 +4,7 @@ import smrta.run_realistic_setting as rrs
 
 from importlib.resources import files, as_file
 from smrta.MRTASolver import MRTASolver
-from .cli import cli
+from smrta.bin.smrta.cli import cli
 
 # The main function.
 #

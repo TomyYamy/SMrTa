@@ -2,7 +2,7 @@ import math
 import random
 import json
 
-from .objects import *
+from smrta.objects import *
 
 random.seed(10)
 

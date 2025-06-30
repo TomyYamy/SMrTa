@@ -1,8 +1,7 @@
-from .SolverInterface import *
-from .run_realistic_setting import load_weighted_graph, dictionary_to_matrix
-from .create_randomized_inputs import *
-from .verify import verify, check_sol_consistency
-from .parser import parser
+from smrta.SolverInterface import *
+from smrta.run_realistic_setting import load_weighted_graph, dictionary_to_matrix
+from smrta.create_randomized_inputs import *
+from smrta.verify import verify, check_sol_consistency
 
 import time
 import statistics

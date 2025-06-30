@@ -1,7 +1,7 @@
 import pickle
 import numpy as np
 
-from .create_randomized_inputs import *
+from smrta.create_randomized_inputs import *
 from dijkstar import Graph, find_path
 
 

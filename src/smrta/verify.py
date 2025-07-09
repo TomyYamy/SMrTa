@@ -1,7 +1,7 @@
 import time
 import math
 
-def verify(sol, agents, tasks_stream, max_cap, distance, max_time):
+def verify(sol, agents, tasks_stream, max_cap, distance, max_time, debug):
     task_counts = [len(tasks) for tasks, _ in tasks_stream]
     start_time = time.time()
     num_agents = len(agents)
@@ -98,7 +98,8 @@ def verify(sol, agents, tasks_stream, max_cap, distance, max_time):
     not_completed = [i for i, a in enumerate(task_picked) if a == -1]
     assert len(not_completed) == 0, f"Tasks {not_completed} not completed"
 
-    print(f"Solution VERIFIED! Took {time.time() - start_time:.3f}s")
+    if debug:
+        print(f"Solution VERIFIED! Took {time.time() - start_time:.3f}s")
 
 
 def check_sol_consistency(curr_time, prev_sol, sol, free_action_points):

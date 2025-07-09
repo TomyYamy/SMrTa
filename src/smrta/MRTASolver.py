@@ -94,16 +94,18 @@ class MRTASolver:
         self.create_vars(len(agents), num_aps, self.cap, num_total_tasks, max_time, len(room_graph), self.aps_list)
         self.build_init_constraints(agents, room_graph, num_aps, capacity, max_time, fidelity)
         curr_max_deadline = 0
-        sol, prev_sol = None, None
+        self.sol, prev_sol = None, None
         num_tasks = 0
         times = []
         results = []
         actions = []
         for i, (tasks, curr_time) in enumerate(tasks_stream):
-            print(f"Batch {i}")
+            if self.debug:
+                print(f"Batch {i}")
+
             curr_max_deadline = max([t.get_deadline(self.default_deadline) for t in tasks] + [curr_max_deadline])
             curr_max_time = curr_max_deadline + max_travel_time
-            num_assigned_actions = self.add_task_constraints(agents, tasks, num_aps, curr_time, curr_max_time, i, sol, fidelity)
+            num_assigned_actions = self.add_task_constraints(agents, tasks, num_aps, curr_time, curr_max_time, i, self.sol, fidelity)
             num_tasks += len(tasks)
             min_dps = self.get_min_dps(len(agents), num_tasks)
             num_unassigned_actions = self.num_actions - num_assigned_actions
@@ -115,9 +117,12 @@ class MRTASolver:
                 # Check the satisfiability of the constraints
                 result = Result.unsat
                 while self.dps_index < len(aps_list):
-                    print(f"Using {self.aps_list[self.dps_index]} action points")
+                    if self.debug:
+                        print(f"Using {self.aps_list[self.dps_index]} action points")
+
                     if self.aps_list[self.dps_index] < min_dps:
-                        print(f"{num_tasks} tasks / {len(agents)} agents requires at least {self.get_min_dps(len(agents), num_tasks)} action points")
+                        if self.debug:
+                            print(f"{num_tasks} tasks / {len(agents)} agents requires at least {self.get_min_dps(len(agents), num_tasks)} action points")
                         self.dps_index += 1
                         continue
                     current_assumes = [self.assumes[self.dps_index]]
@@ -131,24 +136,29 @@ class MRTASolver:
                     end_of_solve = time.time()
                     batch_times.append(end_of_solve - start_of_solve)
                     batch_results.append(result)
-                    print(f"Result is {result}")
+
+                    if self.debug:
+                        print(f"Result is {result}")
+
                     if result == Result.sat: break
                     self.dps_index += 1
                 times.append(batch_times)
                 results.append(batch_results)
                 if result == Result.sat:
                     self.debug_print("The constraints are satisfiable.")
-                    print(f"Time to check satisfiability : {times[-1]}s")
-                    if sol is not None:
-                        prev_sol = sol.copy()
+                    if self.debug:
+                        print(f"Time to check satisfiability : {times[-1]}s")
+
+                    if self.sol is not None:
+                        prev_sol = self.sol.copy()
                     # sol = self.extract_and_verify_model(solver, agents, tasks_stream[:i+1], capacity, room_graph, curr_max_time)
-                    sol = self.extract_model(solver)
-                    verify(sol, agents, tasks_stream[:i+1], capacity, room_graph, curr_max_time)
+                    self.sol = self.extract_model(solver)
+                    verify(self.sol, agents, tasks_stream[:i+1], capacity, room_graph, curr_max_time, self.debug)
                     self.debug_print("Model has been verified.")
                     if prev_sol is not None:
-                        check_sol_consistency(curr_time, prev_sol, sol, self.free_action_points)
+                        check_sol_consistency(curr_time, prev_sol, self.sol, self.free_action_points)
                 else:
-                    sol = None
+                    self.sol = None
                     self.debug_print('Unsatisfiable')
                     break
             else:
@@ -156,10 +166,12 @@ class MRTASolver:
 
         tot_solve_time = sum([sum(batch_t) for batch_t in times])
         results = [[r.name for r in batch_r] for batch_r in results]
-        print(f'ACTIONS: {actions}')
-        print(f'RESULTS: {results}')
-        print(f'SOLVE_TIMES: {times}')
-        print(f'TOTAL_SOLVE_TIME: {tot_solve_time}')
+
+        if self.debug:
+            print(f'ACTIONS: {actions}')
+            print(f'RESULTS: {results}')
+            print(f'SOLVE_TIMES: {times}')
+            print(f'TOTAL_SOLVE_TIME: {tot_solve_time}')
 
     def debug_print(self, s):
         if self.debug: print(s)

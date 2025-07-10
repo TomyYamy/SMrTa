@@ -1,4 +1,5 @@
 import pickle
+import itertools as it
 
 # Generate
 potaro_weighted_graph = {}
@@ -41,6 +42,11 @@ for depot_key in [0, 1]:
     if not direction_key in potaro_weighted_graph.keys():
       potaro_weighted_graph[direction_key]={}
     potaro_weighted_graph[direction_key].update({depot_key: potaro_weighted_graph[depot_key][direction_key]})
+
+## Set deposit 2 deposit
+depot_key = 0 #TODO: Right now consider only one depot.
+for (key0, key1) in it.permutations(range(2, 16+1),2):
+  potaro_weighted_graph[key0].update({key1: potaro_weighted_graph[key0][depot_key]+potaro_weighted_graph[depot_key][key1] })
 
 # Print
 print('potaro_weighted_graph=', potaro_weighted_graph)

@@ -1,3 +1,5 @@
+import json
+
 import smrta.create_randomized_inputs as cri
 import smrta.run_realistic_setting as rrs
 
@@ -65,7 +67,7 @@ def main():
     #
     # The resulting solution from the given problem is now retrieved and stored,
     # accordingly. This allows for post-processing.
-    print(solution)
+    print(json.dumps(solution, indent=2))
 
 
 if __name__ == r"__main__":

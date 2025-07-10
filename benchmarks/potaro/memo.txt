@@ -1,0 +1,18 @@
+Node ID assignment
+0,ME_room
+1,medicine_room
+2,4E
+3,4G
+4,6A
+5,6B
+6,6C
+7,7A
+8,7B
+9,7C
+10,7D
+11,8B
+12,8C
+13,8D
+14,9A
+15,9B
+16,9C

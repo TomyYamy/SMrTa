@@ -35,6 +35,12 @@ potaro_weighted_graph[1] = { 2: 5,
                             15: 5,
                             16: 5}
 
+## Set opposites
+for depot_key in [0, 1]:
+  for direction_key in potaro_weighted_graph[depot_key].keys():
+    if not direction_key in potaro_weighted_graph.keys():
+      potaro_weighted_graph[direction_key]={}
+    potaro_weighted_graph[direction_key].update({depot_key: potaro_weighted_graph[depot_key][direction_key]})
 
 # Print
 print('potaro_weighted_graph=', potaro_weighted_graph)

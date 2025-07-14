@@ -77,15 +77,16 @@ def main():
     fig, ax = plt.subplots()
     ax.invert_yaxis()
 
+    scores = []
     for agent_id, _ in enumerate(solution['agt']):
         assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
         print('agent', agent_id, '=', assigned_task_ids)
         for assigned_task_id in assigned_task_ids:
             task = tasks[0][0][assigned_task_id]
-            orignal_cost = graph[task.start][task.end]
+            original_cost = graph[task.start][task.end]
             start_time = solution['ts'][0][assigned_task_id]
             end_time = solution['td'][0][assigned_task_id]
-            print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'orignal_cost =', orignal_cost)
+            print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'original_cost =', original_cost)
             cost = end_time - start_time
 
             label = assigned_task_id
@@ -93,6 +94,11 @@ def main():
             ec = cmap.colors[assigned_task_id%len(cmap.colors)]
             p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=f'{label}:{task.start}->{task.end}', color=(0,0,0,0), ec=ec, linewidth=3)
             ax.bar_label(p, labels=[label], label_type='center')
+
+            scores.append(task.deadline-end_time)
+
+    total_score = sum(scores)
+    print('score =', total_score)
 
     ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
     fig.tight_layout()

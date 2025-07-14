@@ -91,10 +91,11 @@ def main():
             label = assigned_task_id
             cmap = plt.get_cmap('tab10')
             ec = cmap.colors[assigned_task_id%len(cmap.colors)]
-            p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=label, color=(0,0,0,0), ec=ec, linewidth=3)
+            p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=f'{label}:{task.start}->{task.end}', color=(0,0,0,0), ec=ec, linewidth=3)
             ax.bar_label(p, labels=[label], label_type='center')
 
-    ax.legend()
+    ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
+    fig.tight_layout()
     plt.show()
     plt.clf()
     #plt.close()

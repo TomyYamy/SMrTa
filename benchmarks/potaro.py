@@ -12,17 +12,17 @@ from smrta.solver import SolverKind, TheoryKind
 
 def gannt_chart(ax, nodes, node_start_times, path, agent_name='0', color_pallet_dict={}):
 
-  color_count = 0
-  for edge in path:
-    consume_time = edge[1][2]['weight']
-    node_start, node_end = get_nodes_of_edge(nodes, edge)
-    agent_start_time = node_start_times[node_start[0]]
+    color_count = 0
+    for edge in path:
+        consume_time = edge[1][2]['weight']
+        node_start, node_end = get_nodes_of_edge(nodes, edge)
+        agent_start_time = node_start_times[node_start[0]]
     if(color_pallet_dict):
-      edge_key = (edge[1][0], edge[1][1])
-      ce = color_pallet_dict[edge_key]
+        edge_key = (edge[1][0], edge[1][1])
+        ce = color_pallet_dict[edge_key]
     else:
-      cmap = plt.get_cmap('tab10')
-      ce = cmap.colors[color_count%len(cmap.colors)]
+        cmap = plt.get_cmap('tab10')
+        ce = cmap.colors[color_count%len(cmap.colors)]
     label = str(node_start[1][0])+'-'+str(node_end[1][0])
     p = ax.barh(y=agent_name, width=consume_time, left=agent_start_time, label=label, color=(0,0,0,0), ec=ce, linewidth=3)
     ax.bar_label(p, labels=[label], label_type='center', rotation=90)
@@ -90,6 +90,7 @@ def main():
     # The resulting solution from the given problem is now retrieved and stored,
     # accordingly. This allows for post-processing.
     print(json.dumps(solution, indent=2))
+
 
 
 if __name__ == r"__main__":

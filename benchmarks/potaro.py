@@ -95,7 +95,13 @@ def main():
     # Plot Gannt chart
     agent_id = 0
     for agent_task in solution['agt']:
-        print('agent', agent_id, '=', agent_task)
+        assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
+        print('agent', agent_id, '=', assigned_task_ids)
+        for assigned_task_id in assigned_task_ids:
+            task = tasks[0][0][assigned_task_id]
+            cost = graph[task.start][task.end]
+            print('task', assigned_task_id, 'cost =', cost)
+
         agent_id = agent_id+1
 
 

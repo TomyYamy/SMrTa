@@ -1,5 +1,5 @@
 import json
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 import smrta.create_randomized_inputs as cri
 import smrta.run_realistic_setting as rrs
@@ -93,6 +93,10 @@ def main():
 
 
     # Plot Gannt chart
+    plt.rcParams['pdf.fonttype'] = 42
+    fig, ax = plt.subplots()
+    ax.invert_yaxis()
+
     agent_id = 0
     for agent_task in solution['agt']:
         assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
@@ -100,10 +104,21 @@ def main():
         for assigned_task_id in assigned_task_ids:
             task = tasks[0][0][assigned_task_id]
             cost = graph[task.start][task.end]
-            print('task', assigned_task_id, 'cost =', cost)
+            start_time = solution['ts'][0][assigned_task_id]
+            print('task', assigned_task_id, 'start_time =', start_time, 'cost =', cost)
+
+            label = assigned_task_id
+            cmap = plt.get_cmap('tab10')
+            ec = cmap.colors[assigned_task_id%len(cmap.colors)]
+            p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=label, color=(0,0,0,0), ec=ec, linewidth=3)
+            ax.bar_label(p, labels=[label], label_type='center')
 
         agent_id = agent_id+1
 
+    ax.legend()
+    plt.show()
+    plt.clf()
+    #plt.close()
 
 if __name__ == r"__main__":
     main()

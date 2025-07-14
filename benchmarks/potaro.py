@@ -82,9 +82,11 @@ def main():
         print('agent', agent_id, '=', assigned_task_ids)
         for assigned_task_id in assigned_task_ids:
             task = tasks[0][0][assigned_task_id]
-            cost = graph[task.start][task.end]
+            orignal_cost = graph[task.start][task.end]
             start_time = solution['ts'][0][assigned_task_id]
-            print('task', assigned_task_id, 'start_time =', start_time, 'cost =', cost)
+            end_time = solution['td'][0][assigned_task_id]
+            print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'orignal_cost =', orignal_cost)
+            cost = end_time - start_time
 
             label = assigned_task_id
             cmap = plt.get_cmap('tab10')

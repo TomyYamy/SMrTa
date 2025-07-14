@@ -1,4 +1,5 @@
 import json
+import matplotlib as plt
 
 import smrta.create_randomized_inputs as cri
 import smrta.run_realistic_setting as rrs
@@ -7,6 +8,27 @@ from pathlib import Path
 from smrta.solver import MultiRobotTaskAllocation
 from smrta.solver import Options
 from smrta.solver import SolverKind, TheoryKind
+
+
+def gannt_chart(ax, nodes, node_start_times, path, agent_name='0', color_pallet_dict={}):
+
+  color_count = 0
+  for edge in path:
+    consume_time = edge[1][2]['weight']
+    node_start, node_end = get_nodes_of_edge(nodes, edge)
+    agent_start_time = node_start_times[node_start[0]]
+    if(color_pallet_dict):
+      edge_key = (edge[1][0], edge[1][1])
+      ce = color_pallet_dict[edge_key]
+    else:
+      cmap = plt.get_cmap('tab10')
+      ce = cmap.colors[color_count%len(cmap.colors)]
+    label = str(node_start[1][0])+'-'+str(node_end[1][0])
+    p = ax.barh(y=agent_name, width=consume_time, left=agent_start_time, label=label, color=(0,0,0,0), ec=ce, linewidth=3)
+    ax.bar_label(p, labels=[label], label_type='center', rotation=90)
+    color_count = color_count+1
+
+
 
 def main():
     """The main entrypoint.

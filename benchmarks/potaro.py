@@ -1,4 +1,5 @@
 import json
+import matplotlib.pyplot as plt
 
 import smrta.create_randomized_inputs as cri
 import smrta.run_realistic_setting as rrs
@@ -7,6 +8,7 @@ from pathlib import Path
 from smrta.solver import MultiRobotTaskAllocation
 from smrta.solver import Options
 from smrta.solver import SolverKind, TheoryKind
+
 
 def main():
     """The main entrypoint.
@@ -69,6 +71,33 @@ def main():
     # accordingly. This allows for post-processing.
     print(json.dumps(solution, indent=2))
 
+
+    # Plot Gannt chart
+    plt.rcParams['pdf.fonttype'] = 42
+    fig, ax = plt.subplots()
+    ax.invert_yaxis()
+
+    for agent_id, _ in enumerate(solution['agt']):
+        assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
+        print('agent', agent_id, '=', assigned_task_ids)
+        for assigned_task_id in assigned_task_ids:
+            task = tasks[0][0][assigned_task_id]
+            orignal_cost = graph[task.start][task.end]
+            start_time = solution['ts'][0][assigned_task_id]
+            end_time = solution['td'][0][assigned_task_id]
+            print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'orignal_cost =', orignal_cost)
+            cost = end_time - start_time
+
+            label = assigned_task_id
+            cmap = plt.get_cmap('tab10')
+            ec = cmap.colors[assigned_task_id%len(cmap.colors)]
+            p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=label, color=(0,0,0,0), ec=ec, linewidth=3)
+            ax.bar_label(p, labels=[label], label_type='center')
+
+    ax.legend()
+    plt.show()
+    plt.clf()
+    #plt.close()
 
 if __name__ == r"__main__":
     main()

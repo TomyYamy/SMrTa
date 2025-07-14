@@ -10,6 +10,8 @@ dependencies = [
     "dijkstar>=2.6.0",
     "numpy>=2.3.0",
     "z3-solver>=4.15.1.0",
+    "matplotlib",
+    "pyqt5"
 ]
 
 [project.scripts]

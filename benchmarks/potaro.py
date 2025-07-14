@@ -77,8 +77,7 @@ def main():
     fig, ax = plt.subplots()
     ax.invert_yaxis()
 
-    agent_id = 0
-    for agent_task in solution['agt']:
+    for agent_id, _ in enumerate(solution['agt']):
         assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
         print('agent', agent_id, '=', assigned_task_ids)
         for assigned_task_id in assigned_task_ids:
@@ -92,8 +91,6 @@ def main():
             ec = cmap.colors[assigned_task_id%len(cmap.colors)]
             p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=label, color=(0,0,0,0), ec=ec, linewidth=3)
             ax.bar_label(p, labels=[label], label_type='center')
-
-        agent_id = agent_id+1
 
     ax.legend()
     plt.show()

@@ -92,6 +92,12 @@ def main():
     print(json.dumps(solution, indent=2))
 
 
+    # Plot Gannt chart
+    agent_id = 0
+    for agent_task in solution['agt']:
+        print('agent', agent_id, '=', agent_task)
+        agent_id = agent_id+1
+
 
 if __name__ == r"__main__":
     main()

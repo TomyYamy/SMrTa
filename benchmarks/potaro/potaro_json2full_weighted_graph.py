@@ -9,7 +9,7 @@ import pickle as pickle
 if __name__ == '__main__':
   file_name = 'benchmarks/potaro/yakugzai.json'
   start_and_goal_candidate_list = [
-    #('xxxxxxxxx', x), #ME_room
+    ('020100310', 0), #dummy ME_room #TODO: Why we need the dummy
     ('020100310', 1), #薬局前充電器9[10]
     ('020100414', 2), #4E[14]
     ('020100412', 3), #4G[12]
@@ -57,10 +57,10 @@ if __name__ == '__main__':
     print('dist =', dist)
 
     # add potaro_weighted_graph
-    if potaro_weighted_graph.get(start_enum[0]) != None:
-      potaro_weighted_graph[start_enum[1]].update({goal_enum[1]: dist})
+    if potaro_weighted_graph.get(start_enum[1]) != None:
+      potaro_weighted_graph[start_enum[1]].update({goal_enum[1]: int(dist)})
     else:
-      potaro_weighted_graph.update({start_enum[1]: {goal_enum[1]: dist}})
+      potaro_weighted_graph.update({start_enum[1]: {goal_enum[1]: int(dist)}})
 
   ## Save
   print('potaro_weighted_graph=', potaro_weighted_graph)

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
   file_name = 'benchmarks/potaro/yakugzai.json'
 
-  # json load
+  # Load json
   with open(file_name) as f:
     weighted_graph_list = json.load(f)
   #print(weighted_graph_list)
@@ -22,7 +22,12 @@ if __name__ == '__main__':
                elapsed_times = element_dict['elapsed_times'])
   #print(G)
 
-  ## draw
+  # Run Dijkstra
+  path_nodes = nx.dijkstra_path(G, '020100310', '020100603', weight='weight')
+  edges_path_list = [(path_nodes[i], path_nodes[i+1]) for i in range(len(path_nodes)-1)]
+  print('shortest path =', edges_path_list)
+
+  # Draw
   fig, ax = plt.subplots(figsize=(20,10))
   node_positions = nx.spring_layout(G, scale=50)# auto layout
   nx.draw_networkx(G, pos=node_positions, node_color='lightgrey', node_size=100, width=1)
@@ -35,3 +40,4 @@ if __name__ == '__main__':
   plt.show()
   plt.clf()
   plt.close()
+

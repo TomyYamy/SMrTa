@@ -6,7 +6,10 @@ if __name__ == '__main__':
 
   # json load
   with open(file_name) as f:
-    weighted_graph_dict = json.load(f)
+    weighted_graph_list = json.load(f)
 
-  print(weighted_graph_dict)
+  print(weighted_graph_list)
 
+  # Convert to NetworkX graph
+  for i in weighted_graph_list:
+    print(i)

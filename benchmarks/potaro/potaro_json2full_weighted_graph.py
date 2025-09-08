@@ -6,6 +6,25 @@ import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
   file_name = 'benchmarks/potaro/yakugzai.json'
+  start_and_goal_candidate_list = [
+    #'xxxxxxxxx', #ME_room
+    '020100310', #薬局前充電器9[10]
+    '020100414', #4E[14]
+    '020100412', #4G[12]
+    '020100608', #6A 東側[08]
+    '020100603', #6B 西側[03]
+    '020100627', #6C 東側[27]
+    '020100707', #7A 東側[07]
+    '020100703', #7B 西側[03]
+    '020100726', #7C 東側[26]
+    '020100722', #7D 西側[22]
+    '020100803', #8B 東側[03]
+    '020100826', #8C 東側[26]
+    '020100822', #8D 西側[22]
+    '020100907', #9A 東側[07]
+    '020100903', #9B 西側[03]
+    '020100923'  #9C[23]
+  ]
 
   # Load json
   with open(file_name) as f:
@@ -23,7 +42,7 @@ if __name__ == '__main__':
   #print(G)
 
   # Run Dijkstra
-  path_nodes = nx.dijkstra_path(DiG, '020100310', '020100603', weight='weight')
+  path_nodes = nx.dijkstra_path(DiG, '020100310', '020100608', weight='weight')
   edges_path_list = [(path_nodes[i], path_nodes[i+1]) for i in range(len(path_nodes)-1)]
   print('shortest path =', edges_path_list)
   edge_weights = nx.get_edge_attributes(DiG, 'weight')

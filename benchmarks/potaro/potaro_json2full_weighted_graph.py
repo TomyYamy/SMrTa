@@ -1,6 +1,7 @@
 import json
 
 import networkx as nx
+import matplotlib.pyplot as plt
 
 
 if __name__ == '__main__':
@@ -20,3 +21,15 @@ if __name__ == '__main__':
                goal_waypoint_name = element_dict['goal_waypoint_name'],
                elapsed_times = element_dict['elapsed_times'])
   #print(G)
+
+  ## draw
+  fig, ax = plt.subplots(figsize=(20,10))
+  node_positions = nx.spring_layout(G, scale=50)# auto layout
+  nx.draw_networkx(G, pos=node_positions, node_color='lightgrey', node_size=100, width=1)
+  plt.axis('off')
+  ax.set(aspect=1)
+  #plt.savefig(prefix_file_name+'.pdf')
+  plt.tight_layout()
+  plt.show()
+  plt.clf()
+  plt.close()

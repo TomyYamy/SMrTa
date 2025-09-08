@@ -34,8 +34,9 @@ if __name__ == '__main__':
   # Draw
   fig, ax = plt.subplots(figsize=(20,10))
   node_positions = nx.spring_layout(DiG, scale=50)# auto layout
-  nx.draw_networkx(DiG, pos=node_positions, node_color='lightgrey', node_size=100, width=1)
-  nx.draw_networkx_edge_labels(DiG, pos=node_positions, edge_labels=edge_weights)
+  nx.draw_networkx(DiG, pos=node_positions, node_color='lightgrey', node_size=100, width=1) # base
+  nx.draw_networkx_edge_labels(DiG, pos=node_positions, edge_labels=edge_weights) # weights
+  nx.draw_networkx_edges(DiG, pos=node_positions, edgelist=edges_path_list, width=5, edge_color=plt.get_cmap('tab10').colors[0]) # path
   plt.axis('off')
   ax.set(aspect=1)
   #plt.savefig(prefix_file_name+'.pdf')

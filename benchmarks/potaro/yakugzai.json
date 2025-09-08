@@ -1,0 +1,1635 @@
+[
+  {
+    "start_global_id": "020100301",
+    "start_waypoint_name": "3F 北廊下[01]",
+    "goal_global_id": "020100310",
+    "goal_waypoint_name": "3F 薬局前充電器9[10]",
+    "average_elapsed_time": 35.72,
+    "elapsed_times": [
+      35.325,
+      35.386,
+      35.689,
+      35.474,
+      36.352,
+      36.455,
+      35.38
+    ]
+  },
+  {
+    "start_global_id": "020100310",
+    "start_waypoint_name": "3F 薬局前充電器9[10]",
+    "goal_global_id": "020100314",
+    "goal_waypoint_name": "3F 北廊下[14]",
+    "average_elapsed_time": 38.02,
+    "elapsed_times": [
+      28.142,
+      27.219,
+      27.735,
+      28.055,
+      26.977,
+      27.509,
+      61.9,
+      60.869,
+      27.887,
+      27.225,
+      70.671,
+      61.884,
+      28.609,
+      27.565
+    ]
+  },
+  {
+    "start_global_id": "020100313",
+    "start_waypoint_name": "3F 北廊下[13]",
+    "goal_global_id": "020100310",
+    "goal_waypoint_name": "3F 薬局前充電器9[10]",
+    "average_elapsed_time": 24.96,
+    "elapsed_times": [
+      25.321,
+      25.433,
+      24.742,
+      24.564,
+      25.459,
+      24.78,
+      24.573,
+      25.142,
+      24.788,
+      24.802
+    ]
+  },
+  {
+    "start_global_id": "020100314",
+    "start_waypoint_name": "3F 北廊下[14]",
+    "goal_global_id": "020100316",
+    "goal_waypoint_name": "3F 薬局内[16]",
+    "average_elapsed_time": 41.8,
+    "elapsed_times": [
+      39.26,
+      42.366,
+      42.328,
+      42.298,
+      42.393,
+      38.993,
+      42.181,
+      42.609,
+      42.529,
+      39.095,
+      42.132,
+      42.632,
+      42.28,
+      42.372,
+      42.166,
+      42.272,
+      42.204,
+      42.305
+    ]
+  },
+  {
+    "start_global_id": "020100315",
+    "start_waypoint_name": "3F 北廊下[15]",
+    "goal_global_id": "020100373",
+    "goal_waypoint_name": "3F 北廊下[73]",
+    "average_elapsed_time": 19.99,
+    "elapsed_times": [
+      19.67,
+      19.088,
+      21.06,
+      20.495,
+      19.27,
+      19.491,
+      20.862
+    ]
+  },
+  {
+    "start_global_id": "020100316",
+    "start_waypoint_name": "3F 薬局内[16]",
+    "goal_global_id": "020100317",
+    "goal_waypoint_name": "3F 薬局内[17]",
+    "average_elapsed_time": 0.78,
+    "elapsed_times": [
+      0.569,
+      0.916,
+      0.59,
+      0.53,
+      0.966,
+      1.004,
+      0.672,
+      0.54,
+      1.35,
+      0.795,
+      0.804,
+      1.342,
+      0.712,
+      0.506,
+      0.856,
+      0.591,
+      0.672,
+      0.627
+    ]
+  },
+  {
+    "start_global_id": "020100317",
+    "start_waypoint_name": "3F 薬局内[17]",
+    "goal_global_id": "020100319",
+    "goal_waypoint_name": "3F 北ELVホール[19]",
+    "average_elapsed_time": 109.45,
+    "elapsed_times": [
+      107.566,
+      110.765,
+      107.745,
+      106.805,
+      107.164,
+      110.178,
+      107.934,
+      106.729,
+      107.717,
+      121.874
+    ]
+  },
+  {
+    "start_global_id": "020100317",
+    "start_waypoint_name": "3F 薬局内[17]",
+    "goal_global_id": "020100322",
+    "goal_waypoint_name": "3F 北ELVホール[22]",
+    "average_elapsed_time": 113.42,
+    "elapsed_times": [
+      104.215,
+      119.647,
+      107.234,
+      122.036,
+      107.356,
+      110.259,
+      123.201
+    ]
+  },
+  {
+    "start_global_id": "020100319",
+    "start_waypoint_name": "3F 北ELVホール[19]",
+    "goal_global_id": "020100401",
+    "goal_waypoint_name": "4F 北ELVホール[01]",
+    "average_elapsed_time": 81.14,
+    "elapsed_times": [
+      81.555,
+      80.721
+    ]
+  },
+  {
+    "start_global_id": "020100319",
+    "start_waypoint_name": "3F 北ELVホール[19]",
+    "goal_global_id": "020100601",
+    "goal_waypoint_name": "6F 北ELVホール[01]",
+    "average_elapsed_time": 81.08,
+    "elapsed_times": [
+      81.542,
+      80.626
+    ]
+  },
+  {
+    "start_global_id": "020100319",
+    "start_waypoint_name": "3F 北ELVホール[19]",
+    "goal_global_id": "020100701",
+    "goal_waypoint_name": "7F 北ELVホール[01]",
+    "average_elapsed_time": 73.78,
+    "elapsed_times": [
+      71.728,
+      75.823
+    ]
+  },
+  {
+    "start_global_id": "020100319",
+    "start_waypoint_name": "3F 北ELVホール[19]",
+    "goal_global_id": "020100801",
+    "goal_waypoint_name": "8F 北ELVホール[01]",
+    "average_elapsed_time": 80.58,
+    "elapsed_times": [
+      81.678,
+      79.484
+    ]
+  },
+  {
+    "start_global_id": "020100319",
+    "start_waypoint_name": "3F 北ELVホール[19]",
+    "goal_global_id": "020100901",
+    "goal_waypoint_name": "9F 北ELVホール[01]",
+    "average_elapsed_time": 76.81,
+    "elapsed_times": [
+      77.729,
+      75.881
+    ]
+  },
+  {
+    "start_global_id": "020100321",
+    "start_waypoint_name": "3F 北ELVホール[21]",
+    "goal_global_id": "020100313",
+    "goal_waypoint_name": "3F 北廊下[13]",
+    "average_elapsed_time": 22.8,
+    "elapsed_times": [
+      22.779,
+      23.128,
+      22.677,
+      22.581,
+      22.894,
+      22.758,
+      22.834,
+      22.854,
+      22.793,
+      22.685
+    ]
+  },
+  {
+    "start_global_id": "020100322",
+    "start_waypoint_name": "3F 北ELVホール[22]",
+    "goal_global_id": "020100315",
+    "goal_waypoint_name": "3F 北廊下[15]",
+    "average_elapsed_time": 13.24,
+    "elapsed_times": [
+      13.29,
+      13.569,
+      12.815,
+      12.757,
+      13.788,
+      13.487,
+      13.008
+    ]
+  },
+  {
+    "start_global_id": "020100343",
+    "start_waypoint_name": "3F 南廊下[43]",
+    "goal_global_id": "020100344",
+    "goal_waypoint_name": "3F 南廊下[44]",
+    "average_elapsed_time": 18.34,
+    "elapsed_times": [
+      18.263,
+      18.085,
+      18.338,
+      18.515,
+      17.982,
+      18.759,
+      18.435
+    ]
+  },
+  {
+    "start_global_id": "020100344",
+    "start_waypoint_name": "3F 南廊下[44]",
+    "goal_global_id": "020100363",
+    "goal_waypoint_name": "3F 南ELVホール前[63]",
+    "average_elapsed_time": 30.57,
+    "elapsed_times": [
+      32.149,
+      30.027,
+      28.981,
+      32.875,
+      29.986,
+      30.948,
+      29.059
+    ]
+  },
+  {
+    "start_global_id": "020100346",
+    "start_waypoint_name": "3F 南ELVホール[46]",
+    "goal_global_id": "020100620",
+    "goal_waypoint_name": "6F 南ELVホール[20]",
+    "average_elapsed_time": 77.69,
+    "elapsed_times": [
+      77.451,
+      77.933
+    ]
+  },
+  {
+    "start_global_id": "020100346",
+    "start_waypoint_name": "3F 南ELVホール[46]",
+    "goal_global_id": "020100720",
+    "goal_waypoint_name": "7F 南ELVホール[20]",
+    "average_elapsed_time": 74.97,
+    "elapsed_times": [
+      72.256,
+      77.691
+    ]
+  },
+  {
+    "start_global_id": "020100346",
+    "start_waypoint_name": "3F 南ELVホール[46]",
+    "goal_global_id": "020100820",
+    "goal_waypoint_name": "8F 南ELVホール[20]",
+    "average_elapsed_time": 73.99,
+    "elapsed_times": [
+      69.234,
+      78.754
+    ]
+  },
+  {
+    "start_global_id": "020100346",
+    "start_waypoint_name": "3F 南ELVホール[46]",
+    "goal_global_id": "020100920",
+    "goal_waypoint_name": "9F 南ELVホール[20]",
+    "average_elapsed_time": 70.82,
+    "elapsed_times": [
+      70.822
+    ]
+  },
+  {
+    "start_global_id": "020100347",
+    "start_waypoint_name": "3F 南ELVホール[47]",
+    "goal_global_id": "020100362",
+    "goal_waypoint_name": "3F 南ELVホール前[62]",
+    "average_elapsed_time": 28.27,
+    "elapsed_times": [
+      27.404,
+      28.611,
+      28.809,
+      27.385,
+      27.881,
+      29.201,
+      28.609
+    ]
+  },
+  {
+    "start_global_id": "020100349",
+    "start_waypoint_name": "3F 南廊下[49]",
+    "goal_global_id": "020100355",
+    "goal_waypoint_name": "3F 南廊下[55]",
+    "average_elapsed_time": 47.43,
+    "elapsed_times": [
+      49.561,
+      47.424,
+      47.376,
+      46.386,
+      48.308,
+      46.536,
+      46.385
+    ]
+  },
+  {
+    "start_global_id": "020100355",
+    "start_waypoint_name": "3F 南廊下[55]",
+    "goal_global_id": "020100301",
+    "goal_waypoint_name": "3F 北廊下[01]",
+    "average_elapsed_time": 20.77,
+    "elapsed_times": [
+      22.431,
+      20.324,
+      20.315,
+      22.283,
+      20.19,
+      20.245,
+      19.609
+    ]
+  },
+  {
+    "start_global_id": "020100362",
+    "start_waypoint_name": "3F 南ELVホール前[62]",
+    "goal_global_id": "020100349",
+    "goal_waypoint_name": "3F 南廊下[49]",
+    "average_elapsed_time": 18.58,
+    "elapsed_times": [
+      18.305,
+      18.409,
+      19.155,
+      18.536,
+      18.586,
+      18.525,
+      18.562
+    ]
+  },
+  {
+    "start_global_id": "020100363",
+    "start_waypoint_name": "3F 南ELVホール前[63]",
+    "goal_global_id": "020100346",
+    "goal_waypoint_name": "3F 南ELVホール[46]",
+    "average_elapsed_time": 16.05,
+    "elapsed_times": [
+      16.497,
+      15.401,
+      16.362,
+      15.689,
+      15.537,
+      15.496,
+      17.398
+    ]
+  },
+  {
+    "start_global_id": "020100373",
+    "start_waypoint_name": "3F 北廊下[73]",
+    "goal_global_id": "020100343",
+    "goal_waypoint_name": "3F 南廊下[43]",
+    "average_elapsed_time": 41.5,
+    "elapsed_times": [
+      41.5,
+      41.471,
+      41.502,
+      41.588,
+      41.51,
+      41.492,
+      41.465
+    ]
+  },
+  {
+    "start_global_id": "020100401",
+    "start_waypoint_name": "4F 北ELVホール[01]",
+    "goal_global_id": "020100443",
+    "goal_waypoint_name": "4FCT前廊下[43]",
+    "average_elapsed_time": 8.58,
+    "elapsed_times": [
+      8.706,
+      8.451
+    ]
+  },
+  {
+    "start_global_id": "020100410",
+    "start_waypoint_name": "4F CT前廊下[10]",
+    "goal_global_id": "020100431",
+    "goal_waypoint_name": "4F CEセンター前[31]",
+    "average_elapsed_time": 19.07,
+    "elapsed_times": [
+      19.536,
+      18.6
+    ]
+  },
+  {
+    "start_global_id": "020100412",
+    "start_waypoint_name": "4G[12]",
+    "goal_global_id": "020100423",
+    "goal_waypoint_name": "4F ICU前[23]",
+    "average_elapsed_time": 167.43,
+    "elapsed_times": [
+      167.429
+    ]
+  },
+  {
+    "start_global_id": "020100414",
+    "start_waypoint_name": "4E[14]",
+    "goal_global_id": "020100422",
+    "goal_waypoint_name": "4F ICU前[22]",
+    "average_elapsed_time": 99.62,
+    "elapsed_times": [
+      99.619
+    ]
+  },
+  {
+    "start_global_id": "020100417",
+    "start_waypoint_name": "4F CT前廊下[17]",
+    "goal_global_id": "020100410",
+    "goal_waypoint_name": "4F CT前廊下[10]",
+    "average_elapsed_time": 33.28,
+    "elapsed_times": [
+      35.781,
+      30.77
+    ]
+  },
+  {
+    "start_global_id": "020100418",
+    "start_waypoint_name": "4F 北ELVホール[18]",
+    "goal_global_id": "020100321",
+    "goal_waypoint_name": "3F 北ELVホール[21]",
+    "average_elapsed_time": 90.47,
+    "elapsed_times": [
+      91.315,
+      89.633
+    ]
+  },
+  {
+    "start_global_id": "020100420",
+    "start_waypoint_name": "4F ICU前[20]",
+    "goal_global_id": "020100421",
+    "goal_waypoint_name": "4F ICU前[21]",
+    "average_elapsed_time": 5.86,
+    "elapsed_times": [
+      5.859
+    ]
+  },
+  {
+    "start_global_id": "020100421",
+    "start_waypoint_name": "4F ICU前[21]",
+    "goal_global_id": "020100414",
+    "goal_waypoint_name": "4E[14]",
+    "average_elapsed_time": 26.07,
+    "elapsed_times": [
+      26.068
+    ]
+  },
+  {
+    "start_global_id": "020100422",
+    "start_waypoint_name": "4F ICU前[22]",
+    "goal_global_id": "020100423",
+    "goal_waypoint_name": "4F ICU前[23]",
+    "average_elapsed_time": 21.06,
+    "elapsed_times": [
+      21.057
+    ]
+  },
+  {
+    "start_global_id": "020100423",
+    "start_waypoint_name": "4F ICU前[23]",
+    "goal_global_id": "020100417",
+    "goal_waypoint_name": "4F CT前廊下[17]",
+    "average_elapsed_time": 47.12,
+    "elapsed_times": [
+      19.062,
+      75.171
+    ]
+  },
+  {
+    "start_global_id": "020100428",
+    "start_waypoint_name": "4F ICU前[28]",
+    "goal_global_id": "020100412",
+    "goal_waypoint_name": "4G[12]",
+    "average_elapsed_time": 5.32,
+    "elapsed_times": [
+      5.32
+    ]
+  },
+  {
+    "start_global_id": "020100429",
+    "start_waypoint_name": "4F 北ELVホール[29]",
+    "goal_global_id": "020100418",
+    "goal_waypoint_name": "4F 北ELVホール[18]",
+    "average_elapsed_time": 23.12,
+    "elapsed_times": [
+      22.554,
+      23.684
+    ]
+  },
+  {
+    "start_global_id": "020100430",
+    "start_waypoint_name": "4F 北ELVホール[30]",
+    "goal_global_id": "020100429",
+    "goal_waypoint_name": "4F 北ELVホール[29]",
+    "average_elapsed_time": 49.39,
+    "elapsed_times": [
+      49.422,
+      49.36
+    ]
+  },
+  {
+    "start_global_id": "020100431",
+    "start_waypoint_name": "4F CEセンター前[31]",
+    "goal_global_id": "020100430",
+    "goal_waypoint_name": "4F 北ELVホール[30]",
+    "average_elapsed_time": 20.29,
+    "elapsed_times": [
+      20.205,
+      20.378
+    ]
+  },
+  {
+    "start_global_id": "020100443",
+    "start_waypoint_name": "4FCT前廊下[43]",
+    "goal_global_id": "020100420",
+    "goal_waypoint_name": "4F ICU前[20]",
+    "average_elapsed_time": 44.15,
+    "elapsed_times": [
+      44.147
+    ]
+  },
+  {
+    "start_global_id": "020100443",
+    "start_waypoint_name": "4FCT前廊下[43]",
+    "goal_global_id": "020100428",
+    "goal_waypoint_name": "4F ICU前[28]",
+    "average_elapsed_time": 43.86,
+    "elapsed_times": [
+      43.862
+    ]
+  },
+  {
+    "start_global_id": "020100601",
+    "start_waypoint_name": "6F 北ELVホール[01]",
+    "goal_global_id": "020100602",
+    "goal_waypoint_name": "6F 北ELVホール[02]",
+    "average_elapsed_time": 3.16,
+    "elapsed_times": [
+      3.163,
+      3.165
+    ]
+  },
+  {
+    "start_global_id": "020100602",
+    "start_waypoint_name": "6F 北ELVホール[02]",
+    "goal_global_id": "020100607",
+    "goal_waypoint_name": "6B 自動扉付近[07]",
+    "average_elapsed_time": 15.4,
+    "elapsed_times": [
+      15.397
+    ]
+  },
+  {
+    "start_global_id": "020100602",
+    "start_waypoint_name": "6F 北ELVホール[02]",
+    "goal_global_id": "020100637",
+    "goal_waypoint_name": "6B 西側[37]",
+    "average_elapsed_time": 15.55,
+    "elapsed_times": [
+      15.546
+    ]
+  },
+  {
+    "start_global_id": "020100603",
+    "start_waypoint_name": "6B 西側[03]",
+    "goal_global_id": "020100638",
+    "goal_waypoint_name": "6B 西側[38]",
+    "average_elapsed_time": 104.59,
+    "elapsed_times": [
+      104.594
+    ]
+  },
+  {
+    "start_global_id": "020100607",
+    "start_waypoint_name": "6B 自動扉付近[07]",
+    "goal_global_id": "020100614",
+    "goal_waypoint_name": "6F 北ELVホール[14]",
+    "average_elapsed_time": 70.66,
+    "elapsed_times": [
+      70.658
+    ]
+  },
+  {
+    "start_global_id": "020100607",
+    "start_waypoint_name": "6B 自動扉付近[07]",
+    "goal_global_id": "020100641",
+    "goal_waypoint_name": "6A 東側[41]",
+    "average_elapsed_time": 42.8,
+    "elapsed_times": [
+      42.805
+    ]
+  },
+  {
+    "start_global_id": "020100608",
+    "start_waypoint_name": "6A 東側[08]",
+    "goal_global_id": "020100643",
+    "goal_waypoint_name": "6A 東側[43]",
+    "average_elapsed_time": 113.59,
+    "elapsed_times": [
+      113.586
+    ]
+  },
+  {
+    "start_global_id": "020100611",
+    "start_waypoint_name": "6B 自動扉付近[11]",
+    "goal_global_id": "020100612",
+    "goal_waypoint_name": "6F 北ELVホール[12]",
+    "average_elapsed_time": 25.34,
+    "elapsed_times": [
+      25.34
+    ]
+  },
+  {
+    "start_global_id": "020100612",
+    "start_waypoint_name": "6F 北ELVホール[12]",
+    "goal_global_id": "020100614",
+    "goal_waypoint_name": "6F 北ELVホール[14]",
+    "average_elapsed_time": 11.27,
+    "elapsed_times": [
+      11.269
+    ]
+  },
+  {
+    "start_global_id": "020100614",
+    "start_waypoint_name": "6F 北ELVホール[14]",
+    "goal_global_id": "020100616",
+    "goal_waypoint_name": "6F 北ELVホール[16]",
+    "average_elapsed_time": 29.66,
+    "elapsed_times": [
+      23.693,
+      35.63
+    ]
+  },
+  {
+    "start_global_id": "020100616",
+    "start_waypoint_name": "6F 北ELVホール[16]",
+    "goal_global_id": "020100321",
+    "goal_waypoint_name": "3F 北ELVホール[21]",
+    "average_elapsed_time": 68.84,
+    "elapsed_times": [
+      69.624,
+      68.06
+    ]
+  },
+  {
+    "start_global_id": "020100618",
+    "start_waypoint_name": "6F 南ELVホール[18]",
+    "goal_global_id": "020100619",
+    "goal_waypoint_name": "6F 南ELVホール[19]",
+    "average_elapsed_time": 31.58,
+    "elapsed_times": [
+      26.55,
+      36.613
+    ]
+  },
+  {
+    "start_global_id": "020100619",
+    "start_waypoint_name": "6F 南ELVホール[19]",
+    "goal_global_id": "020100347",
+    "goal_waypoint_name": "3F 南ELVホール[47]",
+    "average_elapsed_time": 62.52,
+    "elapsed_times": [
+      59.544,
+      65.491
+    ]
+  },
+  {
+    "start_global_id": "020100620",
+    "start_waypoint_name": "6F 南ELVホール[20]",
+    "goal_global_id": "020100621",
+    "goal_waypoint_name": "6F 南ELVホール[21]",
+    "average_elapsed_time": 3.55,
+    "elapsed_times": [
+      3.353,
+      3.746
+    ]
+  },
+  {
+    "start_global_id": "020100621",
+    "start_waypoint_name": "6F 南ELVホール[21]",
+    "goal_global_id": "020100626",
+    "goal_waypoint_name": "6C 自動扉付近[26]",
+    "average_elapsed_time": 15.3,
+    "elapsed_times": [
+      15.299
+    ]
+  },
+  {
+    "start_global_id": "020100621",
+    "start_waypoint_name": "6F 南ELVホール[21]",
+    "goal_global_id": "020100649",
+    "goal_waypoint_name": "6D 西側[49]",
+    "average_elapsed_time": 15.76,
+    "elapsed_times": [
+      15.763
+    ]
+  },
+  {
+    "start_global_id": "020100622",
+    "start_waypoint_name": "6D 西側[22]",
+    "goal_global_id": "020100650",
+    "goal_waypoint_name": "6D 西側[50]",
+    "average_elapsed_time": 86.56,
+    "elapsed_times": [
+      86.564
+    ]
+  },
+  {
+    "start_global_id": "020100626",
+    "start_waypoint_name": "6C 自動扉付近[26]",
+    "goal_global_id": "020100618",
+    "goal_waypoint_name": "6F 南ELVホール[18]",
+    "average_elapsed_time": 75.62,
+    "elapsed_times": [
+      75.619
+    ]
+  },
+  {
+    "start_global_id": "020100626",
+    "start_waypoint_name": "6C 自動扉付近[26]",
+    "goal_global_id": "020100653",
+    "goal_waypoint_name": "6C 東側[53]",
+    "average_elapsed_time": 47.84,
+    "elapsed_times": [
+      47.841
+    ]
+  },
+  {
+    "start_global_id": "020100627",
+    "start_waypoint_name": "6C 東側[27]",
+    "goal_global_id": "020100654",
+    "goal_waypoint_name": "6C 東側[54]",
+    "average_elapsed_time": 103.18,
+    "elapsed_times": [
+      103.181
+    ]
+  },
+  {
+    "start_global_id": "020100630",
+    "start_waypoint_name": "6C 自動扉付近[30]",
+    "goal_global_id": "020100631",
+    "goal_waypoint_name": "6F 南ELVホール[31]",
+    "average_elapsed_time": 13.99,
+    "elapsed_times": [
+      13.989
+    ]
+  },
+  {
+    "start_global_id": "020100631",
+    "start_waypoint_name": "6F 南ELVホール[31]",
+    "goal_global_id": "020100618",
+    "goal_waypoint_name": "6F 南ELVホール[18]",
+    "average_elapsed_time": 12.27,
+    "elapsed_times": [
+      12.274
+    ]
+  },
+  {
+    "start_global_id": "020100637",
+    "start_waypoint_name": "6B 西側[37]",
+    "goal_global_id": "020100603",
+    "goal_waypoint_name": "6B 西側[03]",
+    "average_elapsed_time": 32.08,
+    "elapsed_times": [
+      32.084
+    ]
+  },
+  {
+    "start_global_id": "020100638",
+    "start_waypoint_name": "6B 西側[38]",
+    "goal_global_id": "020100607",
+    "goal_waypoint_name": "6B 自動扉付近[07]",
+    "average_elapsed_time": 21.04,
+    "elapsed_times": [
+      21.042
+    ]
+  },
+  {
+    "start_global_id": "020100641",
+    "start_waypoint_name": "6A 東側[41]",
+    "goal_global_id": "020100642",
+    "goal_waypoint_name": "6A 東側[42]",
+    "average_elapsed_time": 19.05,
+    "elapsed_times": [
+      19.051
+    ]
+  },
+  {
+    "start_global_id": "020100642",
+    "start_waypoint_name": "6A 東側[42]",
+    "goal_global_id": "020100608",
+    "goal_waypoint_name": "6A 東側[08]",
+    "average_elapsed_time": 24.12,
+    "elapsed_times": [
+      24.124
+    ]
+  },
+  {
+    "start_global_id": "020100643",
+    "start_waypoint_name": "6A 東側[43]",
+    "goal_global_id": "020100644",
+    "goal_waypoint_name": "6A 東側[44]",
+    "average_elapsed_time": 35.08,
+    "elapsed_times": [
+      35.078
+    ]
+  },
+  {
+    "start_global_id": "020100644",
+    "start_waypoint_name": "6A 東側[44]",
+    "goal_global_id": "020100611",
+    "goal_waypoint_name": "6B 自動扉付近[11]",
+    "average_elapsed_time": 18.06,
+    "elapsed_times": [
+      18.057
+    ]
+  },
+  {
+    "start_global_id": "020100649",
+    "start_waypoint_name": "6D 西側[49]",
+    "goal_global_id": "020100622",
+    "goal_waypoint_name": "6D 西側[22]",
+    "average_elapsed_time": 57.04,
+    "elapsed_times": [
+      57.042
+    ]
+  },
+  {
+    "start_global_id": "020100650",
+    "start_waypoint_name": "6D 西側[50]",
+    "goal_global_id": "020100626",
+    "goal_waypoint_name": "6C 自動扉付近[26]",
+    "average_elapsed_time": 21.05,
+    "elapsed_times": [
+      21.051
+    ]
+  },
+  {
+    "start_global_id": "020100653",
+    "start_waypoint_name": "6C 東側[53]",
+    "goal_global_id": "020100627",
+    "goal_waypoint_name": "6C 東側[27]",
+    "average_elapsed_time": 50.24,
+    "elapsed_times": [
+      50.245
+    ]
+  },
+  {
+    "start_global_id": "020100654",
+    "start_waypoint_name": "6C 東側[54]",
+    "goal_global_id": "020100630",
+    "goal_waypoint_name": "6C 自動扉付近[30]",
+    "average_elapsed_time": 65.55,
+    "elapsed_times": [
+      65.548
+    ]
+  },
+  {
+    "start_global_id": "020100701",
+    "start_waypoint_name": "7F 北ELVホール[01]",
+    "goal_global_id": "020100702",
+    "goal_waypoint_name": "7F 北ELVホール[02]",
+    "average_elapsed_time": 3.65,
+    "elapsed_times": [
+      3.632,
+      3.677
+    ]
+  },
+  {
+    "start_global_id": "020100702",
+    "start_waypoint_name": "7F 北ELVホール[02]",
+    "goal_global_id": "020100703",
+    "goal_waypoint_name": "7B 西側[03]",
+    "average_elapsed_time": 16.54,
+    "elapsed_times": [
+      16.536
+    ]
+  },
+  {
+    "start_global_id": "020100702",
+    "start_waypoint_name": "7F 北ELVホール[02]",
+    "goal_global_id": "020100707",
+    "goal_waypoint_name": "7A 東側[07]",
+    "average_elapsed_time": 15.56,
+    "elapsed_times": [
+      15.56
+    ]
+  },
+  {
+    "start_global_id": "020100703",
+    "start_waypoint_name": "7B 西側[03]",
+    "goal_global_id": "020100707",
+    "goal_waypoint_name": "7A 東側[07]",
+    "average_elapsed_time": 120.77,
+    "elapsed_times": [
+      120.768
+    ]
+  },
+  {
+    "start_global_id": "020100707",
+    "start_waypoint_name": "7A 東側[07]",
+    "goal_global_id": "020100708",
+    "goal_waypoint_name": "7A 東側[08]",
+    "average_elapsed_time": 43.67,
+    "elapsed_times": [
+      43.67
+    ]
+  },
+  {
+    "start_global_id": "020100707",
+    "start_waypoint_name": "7A 東側[07]",
+    "goal_global_id": "020100714",
+    "goal_waypoint_name": "7F 北ELVホール[14]",
+    "average_elapsed_time": 80.56,
+    "elapsed_times": [
+      80.557
+    ]
+  },
+  {
+    "start_global_id": "020100708",
+    "start_waypoint_name": "7A 東側[08]",
+    "goal_global_id": "020100711",
+    "goal_waypoint_name": "7F 北西廊下[11]",
+    "average_elapsed_time": 123.32,
+    "elapsed_times": [
+      123.32
+    ]
+  },
+  {
+    "start_global_id": "020100711",
+    "start_waypoint_name": "7F 北西廊下[11]",
+    "goal_global_id": "020100712",
+    "goal_waypoint_name": "7F 北ELVホール[12]",
+    "average_elapsed_time": 55.37,
+    "elapsed_times": [
+      55.369
+    ]
+  },
+  {
+    "start_global_id": "020100712",
+    "start_waypoint_name": "7F 北ELVホール[12]",
+    "goal_global_id": "020100714",
+    "goal_waypoint_name": "7F 北ELVホール[14]",
+    "average_elapsed_time": 11.23,
+    "elapsed_times": [
+      11.23
+    ]
+  },
+  {
+    "start_global_id": "020100714",
+    "start_waypoint_name": "7F 北ELVホール[14]",
+    "goal_global_id": "020100716",
+    "goal_waypoint_name": "7F 北ELVホール[16]",
+    "average_elapsed_time": 32.11,
+    "elapsed_times": [
+      24.685,
+      39.543
+    ]
+  },
+  {
+    "start_global_id": "020100716",
+    "start_waypoint_name": "7F 北ELVホール[16]",
+    "goal_global_id": "020100321",
+    "goal_waypoint_name": "3F 北ELVホール[21]",
+    "average_elapsed_time": 66.22,
+    "elapsed_times": [
+      67.028,
+      65.416
+    ]
+  },
+  {
+    "start_global_id": "020100718",
+    "start_waypoint_name": "7F 南ELVホール[18]",
+    "goal_global_id": "020100719",
+    "goal_waypoint_name": "7F 南ELVホール[19]",
+    "average_elapsed_time": 32.57,
+    "elapsed_times": [
+      25.5,
+      39.645
+    ]
+  },
+  {
+    "start_global_id": "020100719",
+    "start_waypoint_name": "7F 南ELVホール[19]",
+    "goal_global_id": "020100347",
+    "goal_waypoint_name": "3F 南ELVホール[47]",
+    "average_elapsed_time": 64.68,
+    "elapsed_times": [
+      62.966,
+      66.4
+    ]
+  },
+  {
+    "start_global_id": "020100720",
+    "start_waypoint_name": "7F 南ELVホール[20]",
+    "goal_global_id": "020100721",
+    "goal_waypoint_name": "7F 南ELVホール[21]",
+    "average_elapsed_time": 3.09,
+    "elapsed_times": [
+      3.087,
+      3.089
+    ]
+  },
+  {
+    "start_global_id": "020100721",
+    "start_waypoint_name": "7F 南ELVホール[21]",
+    "goal_global_id": "020100722",
+    "goal_waypoint_name": "7D 西側[22]",
+    "average_elapsed_time": 16.67,
+    "elapsed_times": [
+      16.666
+    ]
+  },
+  {
+    "start_global_id": "020100721",
+    "start_waypoint_name": "7F 南ELVホール[21]",
+    "goal_global_id": "020100726",
+    "goal_waypoint_name": "7C 東側[26]",
+    "average_elapsed_time": 16.42,
+    "elapsed_times": [
+      16.417
+    ]
+  },
+  {
+    "start_global_id": "020100722",
+    "start_waypoint_name": "7D 西側[22]",
+    "goal_global_id": "020100726",
+    "goal_waypoint_name": "7C 東側[26]",
+    "average_elapsed_time": 119.78,
+    "elapsed_times": [
+      119.775
+    ]
+  },
+  {
+    "start_global_id": "020100726",
+    "start_waypoint_name": "7C 東側[26]",
+    "goal_global_id": "020100718",
+    "goal_waypoint_name": "7F 南ELVホール[18]",
+    "average_elapsed_time": 84.82,
+    "elapsed_times": [
+      84.821
+    ]
+  },
+  {
+    "start_global_id": "020100726",
+    "start_waypoint_name": "7C 東側[26]",
+    "goal_global_id": "020100727",
+    "goal_waypoint_name": "7C 東側[27]",
+    "average_elapsed_time": 47.81,
+    "elapsed_times": [
+      47.811
+    ]
+  },
+  {
+    "start_global_id": "020100727",
+    "start_waypoint_name": "7C 東側[27]",
+    "goal_global_id": "020100730",
+    "goal_waypoint_name": "7C 東側[30]",
+    "average_elapsed_time": 117.88,
+    "elapsed_times": [
+      117.882
+    ]
+  },
+  {
+    "start_global_id": "020100730",
+    "start_waypoint_name": "7C 東側[30]",
+    "goal_global_id": "020100731",
+    "goal_waypoint_name": "7F 南ELVホール[31]",
+    "average_elapsed_time": 53.43,
+    "elapsed_times": [
+      53.43
+    ]
+  },
+  {
+    "start_global_id": "020100731",
+    "start_waypoint_name": "7F 南ELVホール[31]",
+    "goal_global_id": "020100718",
+    "goal_waypoint_name": "7F 南ELVホール[18]",
+    "average_elapsed_time": 13.33,
+    "elapsed_times": [
+      13.33
+    ]
+  },
+  {
+    "start_global_id": "020100801",
+    "start_waypoint_name": "8F 北ELVホール[01]",
+    "goal_global_id": "020100802",
+    "goal_waypoint_name": "8F 北ELVホール[02]",
+    "average_elapsed_time": 3.24,
+    "elapsed_times": [
+      3.317,
+      3.156
+    ]
+  },
+  {
+    "start_global_id": "020100802",
+    "start_waypoint_name": "8F 北ELVホール[02]",
+    "goal_global_id": "020100807",
+    "goal_waypoint_name": "8B 自動扉付近[07]",
+    "average_elapsed_time": 15.3,
+    "elapsed_times": [
+      15.303
+    ]
+  },
+  {
+    "start_global_id": "020100802",
+    "start_waypoint_name": "8F 北ELVホール[02]",
+    "goal_global_id": "020100837",
+    "goal_waypoint_name": "8B 西側[37]",
+    "average_elapsed_time": 15.73,
+    "elapsed_times": [
+      15.728
+    ]
+  },
+  {
+    "start_global_id": "020100803",
+    "start_waypoint_name": "8B 東側[03]",
+    "goal_global_id": "020100838",
+    "goal_waypoint_name": "8B 西側[38]",
+    "average_elapsed_time": 120.69,
+    "elapsed_times": [
+      120.687
+    ]
+  },
+  {
+    "start_global_id": "020100807",
+    "start_waypoint_name": "8B 自動扉付近[07]",
+    "goal_global_id": "020100814",
+    "goal_waypoint_name": "8F 北ELVホール[14]",
+    "average_elapsed_time": 59.75,
+    "elapsed_times": [
+      59.754
+    ]
+  },
+  {
+    "start_global_id": "020100807",
+    "start_waypoint_name": "8B 自動扉付近[07]",
+    "goal_global_id": "020100841",
+    "goal_waypoint_name": "8A 自動扉付近[41]",
+    "average_elapsed_time": 43.74,
+    "elapsed_times": [
+      43.738
+    ]
+  },
+  {
+    "start_global_id": "020100808",
+    "start_waypoint_name": "8A[08]",
+    "goal_global_id": "020100809",
+    "goal_waypoint_name": "8A[09]",
+    "average_elapsed_time": 112.91,
+    "elapsed_times": [
+      112.907
+    ]
+  },
+  {
+    "start_global_id": "020100809",
+    "start_waypoint_name": "8A[09]",
+    "goal_global_id": "020100843",
+    "goal_waypoint_name": "8A 自動扉付近[43]",
+    "average_elapsed_time": 10.53,
+    "elapsed_times": [
+      10.526
+    ]
+  },
+  {
+    "start_global_id": "020100811",
+    "start_waypoint_name": "8B 自動扉付近[11]",
+    "goal_global_id": "020100812",
+    "goal_waypoint_name": "8F 北ELVホール[12]",
+    "average_elapsed_time": 32.35,
+    "elapsed_times": [
+      32.35
+    ]
+  },
+  {
+    "start_global_id": "020100812",
+    "start_waypoint_name": "8F 北ELVホール[12]",
+    "goal_global_id": "020100814",
+    "goal_waypoint_name": "8F 北ELVホール[14]",
+    "average_elapsed_time": 18.35,
+    "elapsed_times": [
+      18.349
+    ]
+  },
+  {
+    "start_global_id": "020100814",
+    "start_waypoint_name": "8F 北ELVホール[14]",
+    "goal_global_id": "020100816",
+    "goal_waypoint_name": "8F 北ELVホール[16]",
+    "average_elapsed_time": 29.53,
+    "elapsed_times": [
+      23.5,
+      35.563
+    ]
+  },
+  {
+    "start_global_id": "020100816",
+    "start_waypoint_name": "8F 北ELVホール[16]",
+    "goal_global_id": "020100321",
+    "goal_waypoint_name": "3F 北ELVホール[21]",
+    "average_elapsed_time": 67.29,
+    "elapsed_times": [
+      67.629,
+      66.951
+    ]
+  },
+  {
+    "start_global_id": "020100818",
+    "start_waypoint_name": "8F 南ELVホール[18]",
+    "goal_global_id": "020100819",
+    "goal_waypoint_name": "8F 南ELVホール[19]",
+    "average_elapsed_time": 32.55,
+    "elapsed_times": [
+      25.481,
+      39.626
+    ]
+  },
+  {
+    "start_global_id": "020100819",
+    "start_waypoint_name": "8F 南ELVホール[19]",
+    "goal_global_id": "020100347",
+    "goal_waypoint_name": "3F 南ELVホール[47]",
+    "average_elapsed_time": 68.12,
+    "elapsed_times": [
+      69.642,
+      66.589
+    ]
+  },
+  {
+    "start_global_id": "020100820",
+    "start_waypoint_name": "8F 南ELVホール[20]",
+    "goal_global_id": "020100821",
+    "goal_waypoint_name": "8F 南ELVホール[21]",
+    "average_elapsed_time": 3.79,
+    "elapsed_times": [
+      3.767,
+      3.813
+    ]
+  },
+  {
+    "start_global_id": "020100821",
+    "start_waypoint_name": "8F 南ELVホール[21]",
+    "goal_global_id": "020100822",
+    "goal_waypoint_name": "8D 西側[22]",
+    "average_elapsed_time": 15.76,
+    "elapsed_times": [
+      15.757
+    ]
+  },
+  {
+    "start_global_id": "020100821",
+    "start_waypoint_name": "8F 南ELVホール[21]",
+    "goal_global_id": "020100826",
+    "goal_waypoint_name": "8C 東側[26]",
+    "average_elapsed_time": 15.38,
+    "elapsed_times": [
+      15.384
+    ]
+  },
+  {
+    "start_global_id": "020100822",
+    "start_waypoint_name": "8D 西側[22]",
+    "goal_global_id": "020100826",
+    "goal_waypoint_name": "8C 東側[26]",
+    "average_elapsed_time": 120.06,
+    "elapsed_times": [
+      120.061
+    ]
+  },
+  {
+    "start_global_id": "020100826",
+    "start_waypoint_name": "8C 東側[26]",
+    "goal_global_id": "020100818",
+    "goal_waypoint_name": "8F 南ELVホール[18]",
+    "average_elapsed_time": 83.59,
+    "elapsed_times": [
+      83.59
+    ]
+  },
+  {
+    "start_global_id": "020100826",
+    "start_waypoint_name": "8C 東側[26]",
+    "goal_global_id": "020100827",
+    "goal_waypoint_name": "8C 東側[27]",
+    "average_elapsed_time": 47.98,
+    "elapsed_times": [
+      47.985
+    ]
+  },
+  {
+    "start_global_id": "020100827",
+    "start_waypoint_name": "8C 東側[27]",
+    "goal_global_id": "020100830",
+    "goal_waypoint_name": "8C 東側[30]",
+    "average_elapsed_time": 126.56,
+    "elapsed_times": [
+      126.564
+    ]
+  },
+  {
+    "start_global_id": "020100830",
+    "start_waypoint_name": "8C 東側[30]",
+    "goal_global_id": "020100831",
+    "goal_waypoint_name": "8F 南ELVホール[31]",
+    "average_elapsed_time": 52.37,
+    "elapsed_times": [
+      52.373
+    ]
+  },
+  {
+    "start_global_id": "020100831",
+    "start_waypoint_name": "8F 南ELVホール[31]",
+    "goal_global_id": "020100818",
+    "goal_waypoint_name": "8F 南ELVホール[18]",
+    "average_elapsed_time": 13.3,
+    "elapsed_times": [
+      13.297
+    ]
+  },
+  {
+    "start_global_id": "020100837",
+    "start_waypoint_name": "8B 西側[37]",
+    "goal_global_id": "020100803",
+    "goal_waypoint_name": "8B 東側[03]",
+    "average_elapsed_time": 30.07,
+    "elapsed_times": [
+      30.072
+    ]
+  },
+  {
+    "start_global_id": "020100838",
+    "start_waypoint_name": "8B 西側[38]",
+    "goal_global_id": "020100807",
+    "goal_waypoint_name": "8B 自動扉付近[07]",
+    "average_elapsed_time": 47.11,
+    "elapsed_times": [
+      47.111
+    ]
+  },
+  {
+    "start_global_id": "020100841",
+    "start_waypoint_name": "8A 自動扉付近[41]",
+    "goal_global_id": "020100842",
+    "goal_waypoint_name": "8A 自動扉付近[42]",
+    "average_elapsed_time": 20.04,
+    "elapsed_times": [
+      20.041
+    ]
+  },
+  {
+    "start_global_id": "020100842",
+    "start_waypoint_name": "8A 自動扉付近[42]",
+    "goal_global_id": "020100808",
+    "goal_waypoint_name": "8A[08]",
+    "average_elapsed_time": 28.06,
+    "elapsed_times": [
+      28.061
+    ]
+  },
+  {
+    "start_global_id": "020100843",
+    "start_waypoint_name": "8A 自動扉付近[43]",
+    "goal_global_id": "020100844",
+    "goal_waypoint_name": "8A 自動扉付近[44]",
+    "average_elapsed_time": 35.07,
+    "elapsed_times": [
+      35.069
+    ]
+  },
+  {
+    "start_global_id": "020100844",
+    "start_waypoint_name": "8A 自動扉付近[44]",
+    "goal_global_id": "020100811",
+    "goal_waypoint_name": "8B 自動扉付近[11]",
+    "average_elapsed_time": 30.06,
+    "elapsed_times": [
+      30.061
+    ]
+  },
+  {
+    "start_global_id": "020100901",
+    "start_waypoint_name": "9F 北ELVホール[01]",
+    "goal_global_id": "020100902",
+    "goal_waypoint_name": "9F 北ELVホール[02]",
+    "average_elapsed_time": 3.08,
+    "elapsed_times": [
+      3.129,
+      3.04
+    ]
+  },
+  {
+    "start_global_id": "020100902",
+    "start_waypoint_name": "9F 北ELVホール[02]",
+    "goal_global_id": "020100903",
+    "goal_waypoint_name": "9B 西側[03]",
+    "average_elapsed_time": 14.54,
+    "elapsed_times": [
+      14.539
+    ]
+  },
+  {
+    "start_global_id": "020100902",
+    "start_waypoint_name": "9F 北ELVホール[02]",
+    "goal_global_id": "020100907",
+    "goal_waypoint_name": "9A 東側[07]",
+    "average_elapsed_time": 14.5,
+    "elapsed_times": [
+      14.499
+    ]
+  },
+  {
+    "start_global_id": "020100903",
+    "start_waypoint_name": "9B 西側[03]",
+    "goal_global_id": "020100907",
+    "goal_waypoint_name": "9A 東側[07]",
+    "average_elapsed_time": 120.98,
+    "elapsed_times": [
+      120.976
+    ]
+  },
+  {
+    "start_global_id": "020100907",
+    "start_waypoint_name": "9A 東側[07]",
+    "goal_global_id": "020100908",
+    "goal_waypoint_name": "9A 東側[08]",
+    "average_elapsed_time": 44.79,
+    "elapsed_times": [
+      44.787
+    ]
+  },
+  {
+    "start_global_id": "020100907",
+    "start_waypoint_name": "9A 東側[07]",
+    "goal_global_id": "020100914",
+    "goal_waypoint_name": "9F 北ELVホール[14]",
+    "average_elapsed_time": 79.73,
+    "elapsed_times": [
+      79.728
+    ]
+  },
+  {
+    "start_global_id": "020100908",
+    "start_waypoint_name": "9A 東側[08]",
+    "goal_global_id": "020100911",
+    "goal_waypoint_name": "9A 東側[11]",
+    "average_elapsed_time": 121.92,
+    "elapsed_times": [
+      121.918
+    ]
+  },
+  {
+    "start_global_id": "020100911",
+    "start_waypoint_name": "9A 東側[11]",
+    "goal_global_id": "020100912",
+    "goal_waypoint_name": "9F 北ELVホール[12]",
+    "average_elapsed_time": 55.41,
+    "elapsed_times": [
+      55.407
+    ]
+  },
+  {
+    "start_global_id": "020100912",
+    "start_waypoint_name": "9F 北ELVホール[12]",
+    "goal_global_id": "020100914",
+    "goal_waypoint_name": "9F 北ELVホール[14]",
+    "average_elapsed_time": 11.34,
+    "elapsed_times": [
+      11.341
+    ]
+  },
+  {
+    "start_global_id": "020100914",
+    "start_waypoint_name": "9F 北ELVホール[14]",
+    "goal_global_id": "020100916",
+    "goal_waypoint_name": "9F 北ELVホール[16]",
+    "average_elapsed_time": 31.54,
+    "elapsed_times": [
+      24.605,
+      38.479
+    ]
+  },
+  {
+    "start_global_id": "020100916",
+    "start_waypoint_name": "9F 北ELVホール[16]",
+    "goal_global_id": "020100321",
+    "goal_waypoint_name": "3F 北ELVホール[21]",
+    "average_elapsed_time": 69.25,
+    "elapsed_times": [
+      69.762,
+      68.742
+    ]
+  },
+  {
+    "start_global_id": "020100918",
+    "start_waypoint_name": "9F 南ELVホール[18]",
+    "goal_global_id": "020100919",
+    "goal_waypoint_name": "9F 南ELVホール[19]",
+    "average_elapsed_time": 25.49,
+    "elapsed_times": [
+      25.49
+    ]
+  },
+  {
+    "start_global_id": "020100919",
+    "start_waypoint_name": "9F 南ELVホール[19]",
+    "goal_global_id": "020100347",
+    "goal_waypoint_name": "3F 南ELVホール[47]",
+    "average_elapsed_time": 67.85,
+    "elapsed_times": [
+      67.848
+    ]
+  },
+  {
+    "start_global_id": "020100920",
+    "start_waypoint_name": "9F 南ELVホール[20]",
+    "goal_global_id": "020100921",
+    "goal_waypoint_name": "9F 南ELVホール[21]",
+    "average_elapsed_time": 3.68,
+    "elapsed_times": [
+      3.678
+    ]
+  },
+  {
+    "start_global_id": "020100921",
+    "start_waypoint_name": "9F 南ELVホール[21]",
+    "goal_global_id": "020100922",
+    "goal_waypoint_name": "9F 南ELVホール[22]",
+    "average_elapsed_time": 9.51,
+    "elapsed_times": [
+      9.508
+    ]
+  },
+  {
+    "start_global_id": "020100922",
+    "start_waypoint_name": "9F 南ELVホール[22]",
+    "goal_global_id": "020100923",
+    "goal_waypoint_name": "9C[23]",
+    "average_elapsed_time": 27.79,
+    "elapsed_times": [
+      27.794
+    ]
+  },
+  {
+    "start_global_id": "020100923",
+    "start_waypoint_name": "9C[23]",
+    "goal_global_id": "020100926",
+    "goal_waypoint_name": "9C 自動扉付近[26]",
+    "average_elapsed_time": 105.75,
+    "elapsed_times": [
+      105.754
+    ]
+  },
+  {
+    "start_global_id": "020100926",
+    "start_waypoint_name": "9C 自動扉付近[26]",
+    "goal_global_id": "020100927",
+    "goal_waypoint_name": "9F 南ELVホール[27]",
+    "average_elapsed_time": 29.27,
+    "elapsed_times": [
+      29.275
+    ]
+  },
+  {
+    "start_global_id": "020100927",
+    "start_waypoint_name": "9F 南ELVホール[27]",
+    "goal_global_id": "020100918",
+    "goal_waypoint_name": "9F 南ELVホール[18]",
+    "average_elapsed_time": 15.39,
+    "elapsed_times": [
+      15.392
+    ]
+  }
+]

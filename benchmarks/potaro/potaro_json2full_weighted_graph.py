@@ -48,7 +48,7 @@ if __name__ == '__main__':
   for start_key, goal_key in perm_start_and_goal:
     path_nodes = nx.dijkstra_path(DiG, start_key, goal_key, weight='weight')
     edges_path_list = [(path_nodes[i], path_nodes[i+1]) for i in range(len(path_nodes)-1)]
-    print('shortest path =', edges_path_list)
+    print(f'shortest path of ({start_key},{goal_key}) = {edges_path_list}')
     edge_weights = nx.get_edge_attributes(DiG, 'weight')
     #print(edge_weights)
     dist = sum([edge_weights[edge] for edge in edges_path_list])

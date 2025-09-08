@@ -26,7 +26,7 @@ if __name__ == '__main__':
   fig, ax = plt.subplots(figsize=(20,10))
   node_positions = nx.spring_layout(G, scale=50)# auto layout
   nx.draw_networkx(G, pos=node_positions, node_color='lightgrey', node_size=100, width=1)
-  edge_labels = {(u,v):G[u][v]['weight'] for (u,v) in G.edges()}
+  edge_labels = nx.get_edge_attributes(G, 'weight')
   nx.draw_networkx_edge_labels(G, pos=node_positions, edge_labels=edge_labels)
   plt.axis('off')
   ax.set(aspect=1)

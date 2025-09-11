@@ -8,10 +8,16 @@ if __name__ == '__main__':
 
   # Load json
   with open(file_path_transport_orders) as f:
-    transport_orders = json.load(f)
+    transport_orders = json.load(f)['transport_orders']
   #print(transport_orders)
 
   with open(file_path_transport_tasks) as f:
-    transport_tasks = json.load(f)
+    transport_tasks = json.load(f)['transport_tasks']
   #print(transport_orders)
 
+  # Search orders
+  for transport_order in transport_orders:
+    print(transport_order)
+
+  for transport_task in transport_tasks:
+    print(transport_tasks)

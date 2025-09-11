@@ -47,7 +47,12 @@ if __name__ == '__main__':
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     if filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1):
       transport_orders_date_filtered.append(transport_order)
-  print(transport_orders_date_filtered)
+  #print(transport_orders_date_filtered)
+
+  for transport_order in transport_orders_date_filtered:
+    created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
+    transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
+    print(f'issued time={created} deadline={transport_desired_time}')
 
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

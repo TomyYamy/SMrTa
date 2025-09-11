@@ -40,11 +40,12 @@ if __name__ == '__main__':
   #print(transport_orders)
 
   # filter orders
-  filter_date = datetime.date(2025, 8, 25)
+  filter_date = datetime.date(2025, 8, 20)
 
   for transport_order in transport_orders:
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
-    print(created)
+    if filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1):
+      print(created)
 
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

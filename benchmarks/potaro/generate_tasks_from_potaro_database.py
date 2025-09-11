@@ -53,6 +53,8 @@ if __name__ == '__main__':
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
     print(f'issued time={created} deadline={transport_desired_time}')
+    print(transport_order['od_list'])
+
 
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

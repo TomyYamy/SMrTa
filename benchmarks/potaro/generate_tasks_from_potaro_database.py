@@ -81,8 +81,8 @@ if __name__ == '__main__':
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
     #print(f'issued time={created} deadline={transport_desired_time}')
-    print(f'num of od list = {len((ast.literal_eval(transport_order['od_list'])[0]))}')
-    print(transport_order['od_list'])
+    #print(f'num of od list = {len((ast.literal_eval(transport_order['od_list'])[0]))}')
+    print(f'od_list = {transport_order['od_list']}')
     # Note: od_list struct
     #[[[{'global_id': '020100318'}],
     #  [{'global_id': None}]],
@@ -91,22 +91,25 @@ if __name__ == '__main__':
 
     ## find order_id in transport_tasks
     transport_tasks_matched = [ transport_task for transport_task in transport_tasks if transport_task['order_id'] == transport_order['order_id'] ]
-    print(f'matched tasks num = {len(transport_tasks_matched)}')
-    print('Matched tasks')
-    print(transport_tasks_matched)
+    #print(f'matched tasks num = {len(transport_tasks_matched)}')
+    #print(f'Matched tasks = {transport_tasks_matched}')
     # Note: Matched tasks
     #[{'task_id': '083953de-8a7d-466c-907e-737a780d868d', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 4, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_DOWN', 'task_object': "['薬剤']", 'destination': "['020100316','荷下完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 19:02:49', 'modified_user': None},
     # {'task_id': '2bbfe948-8ca5-418e-918d-d8bd0746ad5f', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 3, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_UP', 'task_object': "['薬剤']", 'destination': "['020100709','積荷完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:58:07', 'modified_user': None}, 
     # {'task_id': '6a1b6e93-d906-444e-be4f-6608b665c893', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 1, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_UP', 'task_object': "['薬剤']", 'destination': "['020100318','積荷完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:52:06', 'modified_user': None}, 
     # {'task_id': 'd9e56ab2-838c-464a-91e1-1241eff0c899', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 2, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_DOWN', 'task_object': "['薬剤']", 'destination': "['020100708','荷下完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:56:47', 'modified_user': None}]
 
-    ## find sequence_number = 1 and 2 as start and target.
-    task_sequence_number_1 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 1 ]
-    task_sequence_number_1 = task_sequence_number_1[0]
-    print(f'start_task = {task_sequence_number_1}')
-    task_sequence_number_2 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 2 ]
-    task_sequence_number_2 = task_sequence_number_2[0]
-    print(f'target_task = {task_sequence_number_2}')
+    ## Skip empty box pick up.
+    if len(transport_tasks_matched) == 3 or len(transport_tasks_matched) == 4:
+      ## find sequence_number = 1 and 2 as start and target.
+      task_sequence_number_1 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 1 ]
+      task_sequence_number_1 = task_sequence_number_1[0]
+      print(f'start_task = {task_sequence_number_1}')
+      task_sequence_number_2 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 2 ]
+      task_sequence_number_2 = task_sequence_number_2[0]
+      print(f'target_task = {task_sequence_number_2}')
+    else:
+      print(f'{transport_order['od_list']} is skipped')
 
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

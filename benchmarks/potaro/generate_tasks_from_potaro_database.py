@@ -40,6 +40,7 @@
 
 
 import datetime
+import ast
 import json
 
 
@@ -79,15 +80,19 @@ if __name__ == '__main__':
   for transport_order in transport_orders_device_id_filtered:
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
-    #print(transport_order['transport_type'])
     #print(f'issued time={created} deadline={transport_desired_time}')
-    #print(transport_order['od_list'])
+    print(f'num of od list = {len((ast.literal_eval(transport_order['od_list'])[0]))}')
+    print(transport_order['od_list'])
+    # Note: od_list struct
+    #[[[{'global_id': '020100318'}],
+    #  [{'global_id': None}]],
+    # [[{'global_id': None}],
+    #  [{'global_id': '020100316'}]]]
 
     ## find order_id in transport_tasks
     transport_tasks_matched = [ transport_task for transport_task in transport_tasks if transport_task['order_id'] == transport_order['order_id'] ]
     if transport_order['transport_type'] == 3:
       print(transport_order['transport_type'])
-      print(transport_order['od_list'])
       print(f'tasks num = {len(transport_tasks_matched)}')
       print('Matched tasks')
       print(transport_tasks_matched)

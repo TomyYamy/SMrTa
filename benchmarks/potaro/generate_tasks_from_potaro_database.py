@@ -91,12 +91,22 @@ if __name__ == '__main__':
 
     ## find order_id in transport_tasks
     transport_tasks_matched = [ transport_task for transport_task in transport_tasks if transport_task['order_id'] == transport_order['order_id'] ]
-    if transport_order['transport_type'] == 3:
-      print(transport_order['transport_type'])
-      print(f'tasks num = {len(transport_tasks_matched)}')
-      print('Matched tasks')
-      print(transport_tasks_matched)
+    print(f'matched tasks num = {len(transport_tasks_matched)}')
+    print('Matched tasks')
+    print(transport_tasks_matched)
+    # Note: Matched tasks
+    #[{'task_id': '083953de-8a7d-466c-907e-737a780d868d', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 4, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_DOWN', 'task_object': "['薬剤']", 'destination': "['020100316','荷下完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 19:02:49', 'modified_user': None},
+    # {'task_id': '2bbfe948-8ca5-418e-918d-d8bd0746ad5f', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 3, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_UP', 'task_object': "['薬剤']", 'destination': "['020100709','積荷完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:58:07', 'modified_user': None}, 
+    # {'task_id': '6a1b6e93-d906-444e-be4f-6608b665c893', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 1, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_UP', 'task_object': "['薬剤']", 'destination': "['020100318','積荷完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:52:06', 'modified_user': None}, 
+    # {'task_id': 'd9e56ab2-838c-464a-91e1-1241eff0c899', 'order_id': 'fe71f30d-1096-4d1c-840c-c488ea996908', 'sequence_number': 2, 'task_sequence_total_count': 4, 'device_id': '0001-011301-000002', 'task_type': 'PICK_DOWN', 'task_object': "['薬剤']", 'destination': "['020100708','荷下完了']", 'task_status': '実行完了', 'deleted': None, 'created': '2025-08-20 18:49:58', 'created_user': None, 'modified': '2025-08-20 18:56:47', 'modified_user': None}]
 
+    ## find sequence_number = 1 and 2 as start and target.
+    task_sequence_number_1 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 1 ]
+    task_sequence_number_1 = task_sequence_number_1[0]
+    print(f'start_task = {task_sequence_number_1}')
+    task_sequence_number_2 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 2 ]
+    task_sequence_number_2 = task_sequence_number_2[0]
+    print(f'target_task = {task_sequence_number_2}')
 
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

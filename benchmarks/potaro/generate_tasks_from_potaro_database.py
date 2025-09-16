@@ -109,14 +109,20 @@ if __name__ == '__main__':
       task_sequence_number_2 = [ transport_task for transport_task in transport_tasks_matched if transport_task['sequence_number'] == 2 ]
       task_sequence_number_2 = task_sequence_number_2[0]
       print(f'target_task = {task_sequence_number_2}')
+
+      start  = ast.literal_eval(task_sequence_number_1['destination'])[0]
+      target = ast.literal_eval(task_sequence_number_2['destination'])[0]
+      if (target == 'to_be_determined'):
+        print(f'{transport_order['od_list']} is skipped, due to skipped task.')
+        continue
     else:
-      print(f'{transport_order['od_list']} is skipped')
+      print(f'{transport_order['od_list']} is skipped, due to different task.')
       continue
 
     # make test case
-    start  = ast.literal_eval(task_sequence_number_1['destination'])[0]
-    target = ast.literal_eval(task_sequence_number_2['destination'])[0]
     test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created})
+
+
 
   # Show test case
   print(f'--test case # is {len(test_case)} --')

@@ -64,7 +64,8 @@ if __name__ == '__main__':
   transport_orders_date_filtered = []
   for transport_order in transport_orders:
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
-    if filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1):
+    transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
+    if (filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1)) and (filter_date <= transport_desired_time.date() and transport_desired_time.date() < filter_date+datetime.timedelta(days=1)):
       transport_orders_date_filtered.append(transport_order)
   #print(transport_orders_date_filtered)
 
@@ -119,10 +120,8 @@ if __name__ == '__main__':
       print(f'{transport_order['od_list']} is skipped, due to different task.')
       continue
 
-    # make test case
+    ## add test case
     test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created})
-
-
 
   # Show test case
   print(f'--test case # is {len(test_case)} --')

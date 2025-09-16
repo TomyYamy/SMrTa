@@ -77,6 +77,7 @@ if __name__ == '__main__':
         transport_orders_device_id_filtered.append(transport_order)
 
   # Resolve destination while matching transport_tasks
+  test_case = []
   for transport_order in transport_orders_device_id_filtered:
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
@@ -110,6 +111,15 @@ if __name__ == '__main__':
       print(f'target_task = {task_sequence_number_2}')
     else:
       print(f'{transport_order['od_list']} is skipped')
+      continue
 
+    # make test case
+    start  = ast.literal_eval(task_sequence_number_1['destination'])[0]
+    target = ast.literal_eval(task_sequence_number_2['destination'])[0]
+    test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created})
+
+  # Show test case
+  print(f'--test case # is {len(test_case)} --')
+  print(test_case)
   #for transport_task in transport_tasks:
   #  print(transport_tasks)

@@ -120,6 +120,5 @@ if __name__ == '__main__':
 
   # Show test case
   print(f'--test case # is {len(test_case)} --')
-  print(test_case)
-  #for transport_task in transport_tasks:
-  #  print(transport_tasks)
+  for order in test_case:
+    print(order)

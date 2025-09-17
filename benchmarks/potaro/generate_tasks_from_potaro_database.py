@@ -153,6 +153,9 @@ if __name__ == '__main__':
     if order['deadline'] - order['issued_time'] < datetime.timedelta(minutes=1):
       order['deadline'] = order['issued_time'] + offset_time
 
+  ## Sort with issued time
+  test_case_rev = sorted(test_case_rev, key=lambda x: x['issued_time'])
+
   print(f'--test case rev # is {len(test_case_rev)} --')
   for order in test_case_rev:
     print(order)

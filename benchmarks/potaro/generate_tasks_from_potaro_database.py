@@ -173,8 +173,8 @@ if __name__ == '__main__':
         'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),
         'tasks': [
           {
-          'start': 49,
-          'end': 63,
+          'start': [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['from'] ][0],
+          'end':   [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['to']   ][0],
           'deadline': int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
           }
         ]

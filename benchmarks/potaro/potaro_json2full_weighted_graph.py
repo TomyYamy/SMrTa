@@ -41,7 +41,10 @@ if __name__ == '__main__':
                  start_global_id = element_dict['start_global_id'],
                  goal_waypoint_name = element_dict['goal_waypoint_name'],
                  elapsed_times = element_dict['elapsed_times'])
-  #print(G)
+  #print(DiG)
+  ## Save
+  with open("benchmarks/potaro/potaro_weighted_graph_NetworkX.pickle", mode="wb") as fo:
+    pickle.dump(DiG, fo)
 
   # Run Dijkstra and Generate potaro_weighted_graph
   ## Permutations

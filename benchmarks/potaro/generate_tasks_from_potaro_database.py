@@ -181,3 +181,6 @@ if __name__ == '__main__':
       }
     )
   print(tasks_stream)
+
+  with open('benchmarks/potaro/test_case4log.json', 'w') as f:
+    f.write(json.dumps(tasks_stream, indent=2))

@@ -176,12 +176,12 @@ if __name__ == '__main__':
   for order in test_case_rev:
     test_case_SMrTa['tasks_stream'].append(
       {
-        'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(seconds=1)),
+        'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),
         'tasks': [
           {
           'start': [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['from'] ][0],
           'end':   [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['to']   ][0],
-          'deadline': int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(seconds=1))
+          'deadline': int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
           }
         ]
       }

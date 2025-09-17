@@ -44,6 +44,12 @@ import ast
 import json
 
 
+id_exchange_dic = {
+  '020100318': '020100316'
+}
+no_exist_in_weighted_graph = ['020100610', '020100408', '020100729', '020100724', '020100605', '020100829', '020100910', '020100318', '020100419', '020100805', '020100206', '020100202', '020100905', '020100209', '020100629', '020100705', '020100824']
+
+
 if __name__ == '__main__':
 
   file_path_transport_orders = 'benchmarks/potaro/transport_orders_202509111028.json'
@@ -128,18 +134,31 @@ if __name__ == '__main__':
     print(order)
 
   # Revise test case
+  ## remap several IDs
+  test_case_rev = []
   for order in test_case:
-    ## add large value when the dead line is too tight.
+    if id_exchange_dic.get(order['from']) != None:
+      order['from'] = id_exchange_dic[order['from']]
+    if id_exchange_dic.get(order['to']) != None:
+      order['to'] = id_exchange_dic[order['to']]
+    test_case_rev.append(order)
+
+  ## remove no_exist_in_weighted_graph cases
+  test_case_rev = [ order for order in test_case_rev
+                    if(order['from'] not in no_exist_in_weighted_graph) and (order['to'] not in no_exist_in_weighted_graph)]
+
+  ## add large value when the dead line is too tight.
+  for order in test_case_rev:
     if order['deadline'] - order['issued_time'] < datetime.timedelta(minutes=1):
       order['deadline'] = order['issued_time'] + offset_time
 
-  print(f'--test case rev # is {len(test_case)} --')
-  for order in test_case:
+  print(f'--test case rev # is {len(test_case_rev)} --')
+  for order in test_case_rev:
     print(order)
 
   # Make enumeration of start and goal start_and_goal_candidate_list.
   start_and_goal_candidates = []
-  for order in test_case:
+  for order in test_case_rev:
     start_and_goal_candidates.append(order['from'])
     start_and_goal_candidates.append(order['to'])
   start_and_goal_candidates = list(set(start_and_goal_candidates))
@@ -148,7 +167,7 @@ if __name__ == '__main__':
 
   # Covert to SMrTa task json.
   tasks_stream = {'tasks_stream': []}
-  for order in test_case:
+  for order in test_case_rev:
     tasks_stream['tasks_stream'].append(
       {
         'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),

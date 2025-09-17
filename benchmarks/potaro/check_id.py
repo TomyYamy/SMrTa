@@ -11,6 +11,9 @@ if __name__ == '__main__':
     fi.close
 
   # Nodes list
+  no_exist_in_weighted_graph = []
   for start_and_goal_candidate in start_and_goal_candidate_list:
     if start_and_goal_candidate[0] not in DiG.nodes:
-      print(f'{start_and_goal_candidate[0]} is not in weighted graph.')
+      no_exist_in_weighted_graph.append(start_and_goal_candidate[0])
+
+  print(f'no_exist_in_weighted_graph={no_exist_in_weighted_graph}')

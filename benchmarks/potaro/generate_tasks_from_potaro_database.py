@@ -48,6 +48,7 @@ if __name__ == '__main__':
 
   file_path_transport_orders = 'benchmarks/potaro/transport_orders_202509111028.json'
   file_path_transport_tasks  = 'benchmarks/potaro/transport_tasks_202509111028.json'
+  offset_time = datetime.timedelta(hours=2)
 
   # Load json
   with open(file_path_transport_orders) as f:
@@ -65,7 +66,7 @@ if __name__ == '__main__':
   for transport_order in transport_orders:
     created = datetime.datetime.strptime(transport_order['created'], '%Y-%m-%d %H:%M:%S')
     transport_desired_time = datetime.datetime.strptime(transport_order['transport_desired_time'], '%Y-%m-%d %H:%M:%S')
-    if (filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1)) and (filter_date <= transport_desired_time.date() and transport_desired_time.date() < filter_date+datetime.timedelta(days=1)):
+    if (filter_date <= created.date() and created.date() < filter_date+datetime.timedelta(days=1)-offset_time) and (filter_date <= transport_desired_time.date() and transport_desired_time.date() < filter_date+datetime.timedelta(days=1)-offset_time):
       transport_orders_date_filtered.append(transport_order)
   #print(transport_orders_date_filtered)
 
@@ -132,7 +133,7 @@ if __name__ == '__main__':
   for order in test_case:
     ## add large value when the dead line is too tight.
     if order['deadline'] - order['issued_time'] < datetime.timedelta(minutes=1):
-      order['deadline'] = order['issued_time'] + datetime.timedelta(hours=2)
+      order['deadline'] = order['issued_time'] + offset_time
 
   print(f'--test case rev # is {len(test_case)} --')
   for order in test_case:

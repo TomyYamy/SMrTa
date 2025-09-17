@@ -147,7 +147,7 @@ if __name__ == '__main__':
           {
           'start': 49,
           'end': 63,
-          'deadline': 502
+          'deadline': int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
           }
         ]
       }

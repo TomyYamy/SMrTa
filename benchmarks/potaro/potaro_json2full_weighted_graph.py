@@ -64,9 +64,9 @@ if __name__ == '__main__':
 
     # add potaro_weighted_graph
     if potaro_weighted_graph.get(start_enum[1]) != None:
-      potaro_weighted_graph[start_enum[1]].update({goal_enum[1]: dist})
+      potaro_weighted_graph[start_enum[1]].update({goal_enum[1]: int(dist/60.0)})
     else:
-      potaro_weighted_graph.update({start_enum[1]: {goal_enum[1]: dist}})
+      potaro_weighted_graph.update({start_enum[1]: {goal_enum[1]: int(dist/60.0)}})
 
   ## Save
   print('potaro_weighted_graph=', potaro_weighted_graph)

@@ -163,6 +163,7 @@ if __name__ == '__main__':
     start_and_goal_candidates.append(order['from'])
     start_and_goal_candidates.append(order['to'])
   start_and_goal_candidates = list(set(start_and_goal_candidates))
+  start_and_goal_candidates.sort()
   start_and_goal_candidate_list = [ (start_and_goal_candidates[i], i) for i in range(len(start_and_goal_candidates))]
   print(f'start_and_goal_candidate_list = {start_and_goal_candidate_list}')
 

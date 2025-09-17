@@ -48,6 +48,7 @@ if __name__ == '__main__':
 
   file_path_transport_orders = 'benchmarks/potaro/transport_orders_202509111028.json'
   file_path_transport_tasks  = 'benchmarks/potaro/transport_tasks_202509111028.json'
+  filter_date = datetime.date(2025, 8, 20)
   offset_time = datetime.timedelta(hours=2)
 
   # Load json
@@ -58,9 +59,6 @@ if __name__ == '__main__':
   with open(file_path_transport_tasks) as f:
     transport_tasks = json.load(f)['transport_tasks']
   #print(transport_orders)
-
-  # Filter orders with Date
-  filter_date = datetime.date(2025, 8, 20)
 
   transport_orders_date_filtered = []
   for transport_order in transport_orders:
@@ -138,3 +136,20 @@ if __name__ == '__main__':
   print(f'--test case rev # is {len(test_case)} --')
   for order in test_case:
     print(order)
+
+  # Covert to SMrTa task json.
+  tasks_stream = {'tasks_stream': []}
+  for order in test_case:
+    tasks_stream['tasks_stream'].append(
+      {
+        'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),
+        'tasks': [
+          {
+          'start': 49,
+          'end': 63,
+          'deadline': 502
+          }
+        ]
+      }
+    )
+  print(tasks_stream)

@@ -20,14 +20,16 @@ def main():
     #
     # This is a specific format that may be viewed by printing the data structure
     # after it has been un-pickled, accordingly.
-    filename = path.joinpath("potaro/potaro_weighted_graph.pickle")
+    #filename = path.joinpath("potaro/potaro_weighted_graph.pickle")
+    filename = path.joinpath("potaro/potaro_weighted_graph4log.pickle")
     count, graph = rrs.dictionary_to_matrix(rrs.load_weighted_graph(file_name=str(filename)))
 
     # We load the agents and tasks, next.
     #
     # This will load the configuration file needed to set up the agents and theory
     # tasks for the solver to solve.
-    filename = path.joinpath("potaro/test_case.json")
+    #filename = path.joinpath("potaro/test_case.json")
+    filename = path.joinpath("potaro/test_case4log.json")
     agents, tasks = cri.load_config(filename)
 
     # Set the options.

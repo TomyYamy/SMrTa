@@ -54,6 +54,7 @@ if __name__ == '__main__':
 
   file_path_transport_orders = 'benchmarks/potaro/transport_orders_202509111028.json'
   file_path_transport_tasks  = 'benchmarks/potaro/transport_tasks_202509111028.json'
+  num_agents = 4
   filter_date = datetime.date(2025, 8, 20)
   offset_time = datetime.timedelta(hours=2)
 
@@ -166,9 +167,10 @@ if __name__ == '__main__':
   print(f'start_and_goal_candidate_list = {start_and_goal_candidate_list}')
 
   # Covert to SMrTa task json.
-  tasks_stream = {'tasks_stream': []}
+  test_case_SMrTa = {'tasks_stream': [],
+                     'agents': [ i for i in range(num_agents)]}
   for order in test_case_rev:
-    tasks_stream['tasks_stream'].append(
+    test_case_SMrTa['tasks_stream'].append(
       {
         'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),
         'tasks': [
@@ -180,7 +182,7 @@ if __name__ == '__main__':
         ]
       }
     )
-  print(tasks_stream)
+  print(test_case_SMrTa)
 
   with open('benchmarks/potaro/test_case4log.json', 'w') as f:
-    f.write(json.dumps(tasks_stream, indent=2))
+    f.write(json.dumps(test_case_SMrTa, indent=2))

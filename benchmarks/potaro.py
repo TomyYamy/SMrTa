@@ -51,7 +51,7 @@ def main():
         timeout=3600,
         basename=None,
         deadline=100,
-        incremental=False,
+        incremental=True,
         debug=False,
     )
 
@@ -81,13 +81,17 @@ def main():
 
     scores = []
     for agent_id, _ in enumerate(solution['agt']):
-        assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
+        #assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
+        assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a']) if assigned_agent_id[0] == agent_id]
         print('agent', agent_id, '=', assigned_task_ids)
         for assigned_task_id in assigned_task_ids:
-            task = tasks[0][0][assigned_task_id]
+            #task = tasks[0][0][assigned_task_id]
+            task = tasks[assigned_task_id][0][0]
             original_cost = graph[task.start][task.end]
-            start_time = solution['ts'][0][assigned_task_id]
-            end_time = solution['td'][0][assigned_task_id]
+            #start_time = solution['ts'][0][assigned_task_id]
+            start_time = solution['ts'][assigned_task_id][0]
+            #end_time = solution['td'][0][assigned_task_id]
+            end_time = solution['td'][assigned_task_id][0]
             print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'original_cost =', original_cost)
             cost = end_time - start_time
 

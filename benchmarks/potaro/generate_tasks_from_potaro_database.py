@@ -57,6 +57,7 @@ if __name__ == '__main__':
   num_agents = 4
   filter_date = datetime.date(2025, 8, 20)
   offset_time = datetime.timedelta(hours=2)
+  incremental_time_period = datetime.timedelta(minutes=30)
 
   # Load json
   with open(file_path_transport_orders) as f:
@@ -173,19 +174,38 @@ if __name__ == '__main__':
   # Covert to SMrTa task json.
   test_case_SMrTa = {'tasks_stream': [],
                      'agents': [ i for i in range(num_agents)]}
+  incremental_time_count = 1
+  temp_tasks = []
   for order in test_case_rev:
-    test_case_SMrTa['tasks_stream'].append(
-      {
-        'arrival': int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1)),
-        'tasks': [
+    issued_time_minutes = int((order['issued_time']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
+    start_id = [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['from'] ][0]
+    end_id   = [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['to']   ][0]
+    deadline_minutes = int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
+    task = {'start': start_id,
+            'end': end_id,
+            'deadline': deadline_minutes}
+    if incremental_time_period == None:
+      test_case_SMrTa['tasks_stream'].append(
+        {
+          'arrival': issued_time_minutes,
+          'tasks': [task]
+        }
+      )
+    else:
+      incremental_time = int(incremental_time_period*incremental_time_count/datetime.timedelta(minutes=1)) # TODO: fix time management without int
+      if issued_time_minutes < incremental_time:  # cache task until reach incremental_time
+        temp_tasks.append(task)
+      else: # store cached tasks
+        test_case_SMrTa['tasks_stream'].append(
           {
-          'start': [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['from'] ][0],
-          'end':   [ start_and_goal_candidate[1] for start_and_goal_candidate in start_and_goal_candidate_list if start_and_goal_candidate[0]==order['to']   ][0],
-          'deadline': int((order['deadline']-datetime.datetime.combine(filter_date, datetime.time()))/datetime.timedelta(minutes=1))
+            'arrival': incremental_time,
+            'tasks': temp_tasks
           }
-        ]
-      }
-    )
+        )
+        # increment
+        temp_tasks = [task]
+        incremental_time_count = incremental_time_count + 1
+
   print(test_case_SMrTa)
 
   with open('benchmarks/potaro/test_case4log.json', 'w') as f:

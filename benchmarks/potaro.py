@@ -29,7 +29,7 @@ def main():
     # This will load the configuration file needed to set up the agents and theory
     # tasks for the solver to solve.
     #filename = path.joinpath("potaro/test_case.json")
-    filename = path.joinpath("potaro/test_case4log.json")
+    filename = path.joinpath("potaro/test_case4log_30mins.json")
     agents, tasks = cri.load_config(filename)
 
     # Set the options.

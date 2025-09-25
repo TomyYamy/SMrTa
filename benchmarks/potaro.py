@@ -20,14 +20,16 @@ def main():
     #
     # This is a specific format that may be viewed by printing the data structure
     # after it has been un-pickled, accordingly.
-    filename = path.joinpath("potaro/potaro_weighted_graph.pickle")
+    #filename = path.joinpath("potaro/potaro_weighted_graph.pickle")
+    filename = path.joinpath("potaro/potaro_weighted_graph4log.pickle")
     count, graph = rrs.dictionary_to_matrix(rrs.load_weighted_graph(file_name=str(filename)))
 
     # We load the agents and tasks, next.
     #
     # This will load the configuration file needed to set up the agents and theory
     # tasks for the solver to solve.
-    filename = path.joinpath("potaro/test_case.json")
+    #filename = path.joinpath("potaro/test_case.json")
+    filename = path.joinpath("potaro/test_case4log_30mins.json")
     agents, tasks = cri.load_config(filename)
 
     # Set the options.
@@ -49,7 +51,7 @@ def main():
         timeout=3600,
         basename=None,
         deadline=100,
-        incremental=False,
+        incremental=True,
         debug=False,
     )
 
@@ -78,24 +80,25 @@ def main():
     ax.invert_yaxis()
 
     scores = []
-    for agent_id, _ in enumerate(solution['agt']):
-        assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
-        print('agent', agent_id, '=', assigned_task_ids)
-        for assigned_task_id in assigned_task_ids:
-            task = tasks[0][0][assigned_task_id]
+    task_id_count = 0
+    for increment_index, _ in enumerate(solution['t2a']):
+        for local_index, assigned_agent in enumerate(solution['t2a'][increment_index]):
+            task = tasks[increment_index][0][local_index] # task = ([index: start_node_id -> target_node_id[deadline]], issued_time)
             original_cost = graph[task.start][task.end]
-            start_time = solution['ts'][0][assigned_task_id]
-            end_time = solution['td'][0][assigned_task_id]
-            print('task', assigned_task_id, 'start_time =', start_time, 'end_time =', end_time,'original_cost =', original_cost)
+            start_time = solution['ts'][increment_index][local_index]
+            end_time = solution['td'][increment_index][local_index]
+            print(f'agent:{assigned_agent} task:{task_id_count} start_time:{start_time} end_time ={end_time} original_cost ={original_cost}')
             cost = end_time - start_time
 
-            label = assigned_task_id
+            label = task_id_count
             cmap = plt.get_cmap('tab10')
-            ec = cmap.colors[assigned_task_id%len(cmap.colors)]
-            p = ax.barh(y=f'agent {agent_id}', width=cost, left=start_time, label=f'{label}:{task.start}->{task.end}', color=(0,0,0,0), ec=ec, linewidth=3)
+            ec = cmap.colors[task_id_count%len(cmap.colors)]
+            p = ax.barh(y=f'agent {assigned_agent}', width=cost, left=start_time, label=f'{label}:{task.start}->{task.end}', color=(0,0,0,0), ec=ec, linewidth=3)
             ax.bar_label(p, labels=[label], label_type='center')
 
-            scores.append(task.deadline-end_time)
+            task_id_count = task_id_count + 1
+
+            scores.append(task.deadline-end_time) #TODO: score is just travel time. Make it execution time.
 
     total_score = sum(scores)
     print('score =', total_score)
@@ -105,6 +108,17 @@ def main():
     plt.show()
     plt.clf()
     #plt.close()
+
+    # Print number of assigned tasks for each agent
+    accumulate_dic = {}
+    for increment_agent_assignments in solution['t2a']:
+        for assigned_agent in increment_agent_assignments:
+            if accumulate_dic.get(assigned_agent) == None:
+                accumulate_dic.update({assigned_agent: 1})
+            else:
+                accumulate_dic[assigned_agent] = accumulate_dic[assigned_agent] + 1
+    print(f'assigned tasks for each agent: {accumulate_dic}')
+
 
 if __name__ == r"__main__":
     main()

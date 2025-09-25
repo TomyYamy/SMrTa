@@ -123,12 +123,16 @@ if __name__ == '__main__':
       if (target == 'to_be_determined'):
         print(f'{transport_order['od_list']} is skipped, due to skipped task.')
         continue
+
+      log_start_time = datetime.datetime.strptime(task_sequence_number_1['modified'], '%Y-%m-%d %H:%M:%S') #TODO: remove this from test_case. It should be independent.
+      log_target_time  = datetime.datetime.strptime(task_sequence_number_2['modified'], '%Y-%m-%d %H:%M:%S')
+
     else:
       print(f'{transport_order['od_list']} is skipped, due to different task.')
       continue
 
     ## add test case
-    test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created})
+    test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created, 'actual_start_time': log_start_time, 'log_goal_time': log_target_time})
 
   # Show test case
   print(f'--test case # is {len(test_case)} --')

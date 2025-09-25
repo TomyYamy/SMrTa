@@ -81,15 +81,11 @@ def main():
 
     scores = []
     task_id_count = 0
-    #assigned_task_ids = [task_id for task_id, assigned_agent_id in enumerate(solution['t2a'][0]) if assigned_agent_id == agent_id]
     for increment_index, _ in enumerate(solution['t2a']):
         for local_index, assigned_agent in enumerate(solution['t2a'][increment_index]):
-            #task = tasks[0][0][assigned_task_id]
             task = tasks[increment_index][0][local_index] # task = ([index: start_node_id -> target_node_id[deadline]], issued_time)
             original_cost = graph[task.start][task.end]
-            #start_time = solution['ts'][0][assigned_task_id]
             start_time = solution['ts'][increment_index][local_index]
-            #end_time = solution['td'][0][assigned_task_id]
             end_time = solution['td'][increment_index][local_index]
             print(f'agent:{assigned_agent} task:{task_id_count} start_time:{start_time} end_time ={end_time} original_cost ={original_cost}')
             cost = end_time - start_time

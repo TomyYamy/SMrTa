@@ -109,5 +109,16 @@ def main():
     plt.clf()
     #plt.close()
 
+    # Print number of assigned tasks for each agent
+    accumulate_dic = {}
+    for increment_agent_assignments in solution['t2a']:
+        for assigned_agent in increment_agent_assignments:
+            if accumulate_dic.get(assigned_agent) == None:
+                accumulate_dic.update({assigned_agent: 1})
+            else:
+                accumulate_dic[assigned_agent] = accumulate_dic[assigned_agent] + 1
+    print(f'assigned tasks for each agent: {accumulate_dic}')
+
+
 if __name__ == r"__main__":
     main()

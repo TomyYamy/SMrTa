@@ -42,6 +42,7 @@
 import datetime
 import ast
 import json
+import matplotlib.pyplot as plt
 
 
 id_exchange_dic = {
@@ -123,12 +124,17 @@ if __name__ == '__main__':
       if (target == 'to_be_determined'):
         print(f'{transport_order['od_list']} is skipped, due to skipped task.')
         continue
+
+      log_assigned_agent = task_sequence_number_1['device_id'] #TODO: remove this from test_case. It should be independent.
+      log_start_time     = datetime.datetime.strptime(task_sequence_number_1['modified'], '%Y-%m-%d %H:%M:%S')
+      log_target_time    = datetime.datetime.strptime(task_sequence_number_2['modified'], '%Y-%m-%d %H:%M:%S')
+
     else:
       print(f'{transport_order['od_list']} is skipped, due to different task.')
       continue
 
     ## add test case
-    test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created})
+    test_case.append({'from': start, 'to': target, 'deadline': transport_desired_time, 'issued_time': created, 'log_assigned_agent': log_assigned_agent, 'log_start_time': log_start_time, 'log_target_time': log_target_time})
 
   # Show test case
   print(f'--test case # is {len(test_case)} --')
@@ -210,3 +216,25 @@ if __name__ == '__main__':
 
   with open('benchmarks/potaro/test_case4log.json', 'w') as f:
     f.write(json.dumps(test_case_SMrTa, indent=2))
+
+  #plot logged agent assignments Gannt chart
+  plt.rcParams['pdf.fonttype'] = 42
+  fig, ax = plt.subplots()
+  ax.invert_yaxis()
+
+  for color_count, order in enumerate(test_case_rev):
+    start_time = order['log_start_time']
+    end_time   = order['log_target_time']
+    cost = end_time - start_time
+
+    label=f'{order['from']}->{order['to']}'
+    cmap = plt.get_cmap('tab10')
+    ec = cmap.colors[color_count%len(cmap.colors)]
+    p = ax.barh(y=order['log_assigned_agent'], width=cost, left=start_time, label=label, color=(0,0,0,0), ec=ec, linewidth=3)
+    #ax.bar_label(p, labels=[label], label_type='center')
+
+  ax.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
+  fig.tight_layout()
+  plt.show()
+  plt.clf()
+  #plt.close()
